@@ -11,5 +11,3 @@
     <title>PPE GSB LOT Équipe 4</title>
 </head>
 <body>
-Y'a rien c'est un test
-</body>
