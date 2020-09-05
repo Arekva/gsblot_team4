@@ -9,11 +9,11 @@ include "controller/c_accueil.php";
 include "view/footer.php";
 
 //test raccord bdd
-
+/*
 include "includes/modele/gestion_bdd.php";
 $nomMedecin = test();
 echo "Nom du medecin : ";
-echo $nomMedecin[0][2];
+echo $nomMedecin[0][2];*/
 ?>
 
 
