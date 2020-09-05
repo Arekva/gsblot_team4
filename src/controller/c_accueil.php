@@ -1,18 +1,18 @@
 <?php
 
-/*
+
 if (!isset($_REQUEST['action']))
-	$action = "afficher" ;
+	$action = "authentification" ;
 else
 	$action = $_REQUEST['action'] ;
 	
 switch ($action)
 {
-	case "afficher" : { 
+	case "authentification" : { 
             require "view/login.php" ; 
             break ;             
-        }*/
+     		}
 
+}
 
-        require "view/login.php" ; 
 ?>
