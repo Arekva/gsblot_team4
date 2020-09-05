@@ -1,3 +1,9 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=stadjutoogg4', 'gsblot_team4', '2468');
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=stadjutoogg4;charset=utf8;', 'test', 'test');
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 ?>
