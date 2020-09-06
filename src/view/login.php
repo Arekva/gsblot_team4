@@ -1,4 +1,4 @@
-<div class="centrermoi">
+<div class="centre-moi">
 <form class="form">
   <div class="log-img">
     <img src="includes/logoGSB.png">
