@@ -26,8 +26,8 @@
                                         -->
             <!-- AU CHOIX -->
             <?php
-            $nomUser = "El DIIOOO";
-            $nomUserInitial = "ED";
+            $nomUser = "Gaetan Fontan";
+            $nomUserInitial = "GF";
             echo "
             <h3 id=\"fullName\">
                 ".$nomUser."
