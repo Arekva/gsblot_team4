@@ -12,7 +12,10 @@ switch ($action)
             require "view/login.php" ; 
             break ;             
      		}
-
+    case "dashboard" : {
+            require "view/dashboard.php";
+            break;
+    }
 }
 
 ?>
