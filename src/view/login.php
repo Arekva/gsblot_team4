@@ -13,6 +13,7 @@
   </div>
 
   <button type="submit" class="btn btn-primary">Se connecter</button>
+    <a href="index.php?action=dashboard">DASHBOARD</a>
 </form>
 </div>
 
