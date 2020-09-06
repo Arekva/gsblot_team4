@@ -10,49 +10,65 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3 id="fullName">
-                <?php
-                $nomUser = "El DIIOOO";
-                echo $nomUser;
-                ?>
+                                        <!--
+                                        <h3 id="fullName">
+                                            <?php
+                                            $nomUser = "El DIIOOO";
+                                            echo $nomUser;
+                                            ?>
+                                        </h3>
+                                        <strong id="initialName" style=\"display: none;\">
+                                            <?php
+                                            $nomUserInitial = "ED";
+                                            echo $nomUserInitial;
+                                            ?>
+                                        </strong>
+                                        -->
+            <!-- AU CHOIX -->
+            <?php
+            $nomUser = "El DIIOOO";
+            $nomUserInitial = "ED";
+            echo "
+            <h3 id=\"fullName\">
+                ".$nomUser."
             </h3>
-            <strong id="initialName">
-                <?php
-                $nomUserInitial = "ED";
-                echo $nomUserInitial;
-                ?>
-            </strong>
+            <strong id=\"initialName\" style=\"display: none;\">
+                ".$nomUserInitial."
+            </strong>";
+            ?>
+
+
         </div>
 
-        <ul class="list-unstyled components">
+        <ul class="list-unstyled components" id="test">
             <li class="active">
                 <a href="#">
-                    <i class="fas fa-bookmark"></i>
-                    TRUC1
+                    <i class="fas fa-bookmark bigMoi"></i>
+                    <div class="sidebar-text">TRUC1</div>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-bookmark"></i>
-                    TRUC2
+                    <i class="fas fa-bookmark bigMoi"></i>
+                    <div class="sidebar-text">TRUC1</div>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-bookmark"></i>
-                    TRUC3
+                    <i class="fas fa-bookmark bigMoi"></i>
+                    <div class="sidebar-text">TRUC1</div>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-bookmark"></i>
-                    TRUC4
+                    <i class="fas fa-bookmark bigMoi"></i>
+                    <div class="sidebar-text">TRUC1</div>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-bookmark"></i>
-                    TRUC4
+                    <i class="fas fa-share bigMoi"></i>
+                    <div class="sidebar-text">DISCONNECT</div>
                 </a>
             </li>
         </ul>
