@@ -10,21 +10,8 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-                                        <!--
-                                        <h3 id="fullName">
-                                            <?php
-                                            $nomUser = "El DIIOOO";
-                                            echo $nomUser;
-                                            ?>
-                                        </h3>
-                                        <strong id="initialName" style=\"display: none;\">
-                                            <?php
-                                            $nomUserInitial = "ED";
-                                            echo $nomUserInitial;
-                                            ?>
-                                        </strong>
-                                        -->
-            <!-- AU CHOIX -->
+
+            <!-- nom Dashboard -->
             <?php
             $nomUser = "Gaetan Fontan";
             $nomUserInitial = "GF";
