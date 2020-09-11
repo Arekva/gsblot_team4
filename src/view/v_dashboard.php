@@ -147,4 +147,13 @@
         </ul>
 
     </nav>
-    
+    <div class="main-db">
+        <!-- Y a moyen de faire en sorte que le controller interviennet ici dans devoir mettre les autres balises dans le footer, je m'en occuprais + tard
+        - QUEL CONTROLER ?
+        -->
+        <?php
+
+
+        ?>
+    </div>
+</div>

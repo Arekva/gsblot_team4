@@ -1,4 +1,4 @@
-</div>
+
 <!-- Optional JavaScript -->
 <script src="includes/script.js"></script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,1 +1,5 @@
-<h1>magasin</h1>
+<?php
+
+include "view/v_magasin.php";
+
+?>
