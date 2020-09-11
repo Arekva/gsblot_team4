@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd61cbb0-fe1f-4fa2-aaf7-19496331560e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/c_accueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/c_home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/c_accueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/c_accueil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/includes/modele/gestion_bdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/includes/modele/gestion_bdd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/dashboard.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +21,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1h3oziekQXpcRlnKNnfikwC8sC7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,6 +53,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="699" y="214" key="#CLI_Interpreters" timestamp="1599249862801">
