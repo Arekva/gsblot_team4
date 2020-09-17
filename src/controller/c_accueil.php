@@ -32,9 +32,13 @@ switch ($action)
                 else if ($user[0]['gsb_autorisation'] == 3){
                     $uc="visiteurs";
 
+                }                
                 }
+                else {echo "<script>alert(\"Erreur mauvais identifiants\")</script>";
+                   require "view/login.php" ; 
 
-        }
+            }
+            break;
     }
 }
 ?>
