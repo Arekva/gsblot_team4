@@ -17,7 +17,7 @@
 	*/
 	function getUser($username, $pass) {
 		require "connectBdd.php";
-		
+
 		$sql = 
 		"SELECT gsb_id, gsb_autorisation, gsb_nom, gsb_prenom 
 		FROM gsb_visitualisateur 
