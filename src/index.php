@@ -5,7 +5,6 @@ date_default_timezone_set('Europe/Paris');
 
 include "view/header.php";
 include "includes/modele/connectBdd.php";
-//include "controller/c_accueil.php";
 require "controller/c_principal.php";
 include "view/footer.php";
 

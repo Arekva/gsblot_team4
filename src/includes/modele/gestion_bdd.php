@@ -17,13 +17,15 @@
 	*/
 	function getUser($username, $pass) {
 		require "connectBdd.php";
-
+		
 		$sql = 
 		"SELECT gsb_id, gsb_autorisation, gsb_nom, gsb_prenom 
 		FROM gsb_visitualisateur 
-		WHERE gsb_login = '$username' AND gsb_mdp = '$pass'";
+		WHERE gsb_login = :username AND gsb_mdp = :pass";
 
 		$exec=$bdd->prepare($sql);
+		$exec->bindParam('username', $username);
+		$exec->bindParam('pass', $pass);
 		$exec->execute();
 		$curseur=$exec->fetchAll();
 		return $curseur;
