@@ -145,7 +145,7 @@ CREATE TABLE `gsb_visitualisateur` (
 
 LOCK TABLES `gsb_visitualisateur` WRITE;
 /*!40000 ALTER TABLE `gsb_visitualisateur` DISABLE KEYS */;
-INSERT INTO `gsb_visitualisateur` VALUES ('1','aaa','mdp','1','ProdUilla',UillaProd'),('2','bbb','mdp','2','jeanMagasine','magosinJean'),('3','ccc','mdp','3','SteveVisiteur','VisiteurSteve'),('4','ddd','mdp','3','Visiteur2','VistorTwo'),('5','eee','mdp','3','Visiteur3','VistorThree');
+INSERT INTO `gsb_visitualisateur` VALUES ('1','aaa','mdp','1','ProdUilla','UillaProd'),('2','bbb','mdp','2','jeanMagasine','magosinJean'),('3','ccc','mdp','3','SteveVisiteur','VisiteurSteve'),('4','ddd','mdp','3','Visiteur2','VistorTwo'),('5','eee','mdp','3','Visiteur3','VistorThree');
 /*!40000 ALTER TABLE `gsb_visitualisateur` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
