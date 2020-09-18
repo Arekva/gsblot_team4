@@ -35,7 +35,7 @@
 	 * Récupère tous les échantillions disponibles.
 	 * @return curseur : tableau 2D contenant tous les échantillions non donnés.
 	 */
-	function getEchantillions() {
+	function getEchantillons() {
 		require "connectBdd.php";
 
 		$sql = 
@@ -47,11 +47,36 @@
 		return $curseur;
 	}
 
-	function getEchantillionsSortis($medicament, $dateSortie, $visiteur) {
+	/**
+	 * Recupère tous les échantillions selon un médicament, date de sortie et visiteur
+	 * @param medicamentId : Identifiant du médicament
+	 * @param dateSortie : date the sortie du médicement
+	 * @param visiteurId : identifiant de l'utilisateur
+	 * @return curseur : tous les échantillons correspondants à la recherche. 
+	 */
+	function getEchantillonsSortis($medicamentId, $dateSortie, $visiteurId) {
 		require "connectBdd.php";
 
-		//$sql = 
+		$sql = 
+		"SELECT 
+		gsb_echantillon.gsb_numero, gsb_lot.gsb_numero, gsb_medicament.libelle, gsb_visitualisateur.gsb_nom, gsb_visitualisateur.gsb_prenom
+		FROM gsb_lot 
+		INNER JOIN gsb_echantillon ON gsb_echantillon.gsb_numeroLot = gsb_lot.gsb_numero
+		INNER JOIN gsb_medicament ON gsb_medicament.id = gsb_lot.gsb_idMedicament
+		INNER JOIN gsb_visitualisateur ON gsb_visitualisateur.gsb_id = gsb_echantillon.gsb_idVisitualisateur
 		
+		WHERE gsb_medicament.libelle = ':medicament' AND gsb_echantillon.dateSortie LIKE ':date' AND gsb_visitualisateur.gsb_nom = ':visiteur'
+		
+		ORDER BY gsb_echantillon.gsb_numero, gsb_lot.gsb_numero";
+
+		$exec = $bdd->prepare($sql);
+		$exec->bindParam('medicament', $medicamentId);
+		$exec->bindParam('date', $dateSortie);
+		$exec->bindParam('visiteur', $visiteurId);
+
+		$exec->execute();
+		$curseur=$exec->fetchAll();
+		return $curseur;
 	}
 
 	function getMedicaments() {
