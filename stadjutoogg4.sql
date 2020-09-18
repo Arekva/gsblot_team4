@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 18 sep. 2020 à 13:09
+-- Généré le :  ven. 18 sep. 2020 à 14:30
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -58,17 +58,17 @@ INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dat
 DROP TABLE IF EXISTS `gsb_lot`;
 CREATE TABLE IF NOT EXISTS `gsb_lot` (
   `gsb_numero` int(11) NOT NULL AUTO_INCREMENT,
-  `gsb_dateFabricaion` datetime DEFAULT NULL,
+  `gsb_dateFabrication` datetime DEFAULT NULL,
   `gsb_idMedicament` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_numero`),
   KEY `gsb_idMedicament` (`gsb_idMedicament`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `gsb_lot`
 --
 
-INSERT INTO `gsb_lot` (`gsb_numero`, `gsb_dateFabricaion`, `gsb_idMedicament`) VALUES
+INSERT INTO `gsb_lot` (`gsb_numero`, `gsb_dateFabrication`, `gsb_idMedicament`) VALUES
 (1, '2019-12-10 00:00:00', '3');
 
 -- --------------------------------------------------------
