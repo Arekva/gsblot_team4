@@ -16,20 +16,20 @@ switch ($action)
             break ;}  
 
     case "validationNewLot" : {
-    	echo "Bravo votre lot est valider";
     	$laDate = $_REQUEST['laDate']." 00:00:00";
     	$leIDmedoc = $_REQUEST['medic'];
     	$leNbr = $_REQUEST['nbrEchantillon'];
-    	echo $laDate;
-    	//echo $leIDmedoc;
-    	//echo $leNbr;
     	require "includes/modele/gestion_bdd.php";
     	AjoutNewLot($laDate,$leIDmedoc,$leNbr);
-    	
+    	echo "Bravo l'ajout de votre lot est valider";
 		break;
 	}
-         
-     		
+    case "consultLotMedicament" : {
+	//require "view/.."
+		break;
+	}
+
+ 
 	}
 	
 ?>
