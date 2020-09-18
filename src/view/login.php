@@ -1,5 +1,5 @@
 <div class="centre-moi">
-<form class="form" method="Post"  action="index.php?action=dashboard">
+<form class="form" method="Post"  action="index.php?action=authentification">
   <div class="log-img">
     <img src="includes/logoGSB.png">
   </div>
