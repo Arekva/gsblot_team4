@@ -13,7 +13,7 @@
 	 * Récupère un utilisateur selon un identifiant.
 	 * @param username : nom d'utilisateur du compte
 	 * @param pass : le mot de passe de du compte 
-	 * @return tableau contenant id, autorisation, nom et prénom si correct; rien si ids incorrects
+	 * @return curseur : tableau contenant id, autorisation, nom et prénom si correct; rien si ids incorrects
 	*/
 	function getUser($username, $pass) {
 		require "connectBdd.php";
@@ -31,7 +31,40 @@
 		return $curseur;
 	}
 
+	/**
+	 * Récupère tous les échantillions disponibles.
+	 * @return curseur : tableau 2D contenant tous les échantillions non donnés.
+	 */
+	function getEchantillions() {
+		require "connectBdd.php";
 
+		$sql = 
+		"SELECT * FROM gsb_echantillon WHERE dateDon IS NULL";
+
+		$exec = $bdd->prepare($sql);
+		$exec->execute();
+		$curseur = $exec->fetchAll();
+		return $curseur;
+	}
+
+	function getEchantillionsSortis($medicament, $dateSortie, $visiteur) {
+		require "connectBdd.php";
+
+		//$sql = 
+		
+	}
+
+	function getMedicaments() {
+		require "connectBdd.php";
+
+		$sql = 
+		"SELECT libelle FROM gsb_medicament";
+
+		$exec = $bdd->prepare($sql);
+		$exec->execute();
+		$curseur = $exec->fetchAll();
+		return $curseur;
+	}
 
 
 
