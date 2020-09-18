@@ -152,7 +152,7 @@
         - QUEL CONTROLER ?
         -->
         <?php
-            require $_SESSION['affichage'];
+        
         ?>
     </div>
 </div>
