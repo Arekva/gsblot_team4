@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 18 sep. 2020 à 14:30
+-- Généré le :  ven. 18 sep. 2020 à 15:09
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -40,14 +40,24 @@ CREATE TABLE IF NOT EXISTS `gsb_echantillon` (
   KEY `gsb_idVisitualisateur` (`gsb_idVisitualisateur`),
   KEY `gsb_matriculeMedecins` (`gsb_matriculeMedecins`),
   KEY `gsb_numeroLot` (`gsb_numeroLot`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `gsb_echantillon`
 --
 
 INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dateDon`, `gsb_idVisitualisateur`, `gsb_matriculeMedecins`) VALUES
-(1, 1, '2020-09-07 00:00:00', '2020-09-08 00:00:00', '3', 'T2eW0R1D');
+(1, 1, '2020-09-07 00:00:00', '2020-09-08 00:00:00', '3', 'T2eW0R1D'),
+(1, 15, NULL, NULL, NULL, NULL),
+(2, 15, NULL, NULL, NULL, NULL),
+(3, 15, NULL, NULL, NULL, NULL),
+(4, 15, NULL, NULL, NULL, NULL),
+(5, 15, NULL, NULL, NULL, NULL),
+(6, 15, NULL, NULL, NULL, NULL),
+(7, 15, NULL, NULL, NULL, NULL),
+(8, 15, NULL, NULL, NULL, NULL),
+(9, 15, NULL, NULL, NULL, NULL),
+(10, 15, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -62,14 +72,16 @@ CREATE TABLE IF NOT EXISTS `gsb_lot` (
   `gsb_idMedicament` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_numero`),
   KEY `gsb_idMedicament` (`gsb_idMedicament`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `gsb_lot`
 --
 
 INSERT INTO `gsb_lot` (`gsb_numero`, `gsb_dateFabrication`, `gsb_idMedicament`) VALUES
-(1, '2019-12-10 00:00:00', '3');
+(1, '2019-12-10 00:00:00', '3'),
+(15, '2020-01-01 00:00:00', '1'),
+(14, '2020-01-01 00:00:00', '1');
 
 -- --------------------------------------------------------
 

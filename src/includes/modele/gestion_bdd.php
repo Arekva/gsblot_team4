@@ -1,12 +1,24 @@
 <?php
-	function test(){
+	function AjoutNewLot($doute,$medocID,$nbEchantillon){
 		require "connectBdd.php";
-		$sql = "select * from gsb_medecins";
+		$sql = 'insert into gsb_lot (gsb_dateFabrication,gsb_idMedicament)
+		VALUES ("'.$doute.'",'.$medocID.')';
 		$exec=$bdd->prepare($sql) ;
         $exec->execute() ;
-        $curseur=$exec->fetchAll();
-        return $curseur;
-	
+
+		$sql = 'select max(gsb_numero) from gsb_lot';
+		$exec=$bdd->prepare($sql) ;
+        $exec->execute() ;
+        $curseur = $exec->fetchAll();
+        //echo $curseur[0][0];
+        
+        for ($i=1; $i < $nbEchantillon+1; $i++) { 
+        	$sql = 'insert into gsb_echantillon (gsb_numero, gsb_numeroLot)
+			VALUES ('.$i.','.$curseur[0][0].')';
+			$exec=$bdd->prepare($sql) ;
+        	$exec->execute() ;
+        }
+		
 	}
 
 	/**
@@ -83,7 +95,7 @@
 		require "connectBdd.php";
 
 		$sql = 
-		"SELECT libelle FROM gsb_medicament";
+		"select * FROM gsb_medicament";
 
 		$exec = $bdd->prepare($sql);
 		$exec->execute();
