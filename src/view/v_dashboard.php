@@ -31,7 +31,7 @@
             <?php
             
             // production
-            if ($user[0]['gsb_autorisation'] == 1){
+            if ($_SESSION['droit'] == 1){
                 echo '
                 <a href="#">
                     <i class="fas fa-bookmark bigMoi"></i>
@@ -59,7 +59,7 @@
             }
 
             // magasin
-            if ($user[0]['gsb_autorisation'] == 2 ){
+            if ($_SESSION['droit'] == 2 ){
                 echo '
             <a href="#">
                 <i class="fas fa-bookmark bigMoi"></i>
@@ -102,7 +102,7 @@
             }
 
             //visiteur
-            if ($user[0]['gsb_autorisation'] == 3 ){
+            if ($_SESSION['droit'] == 3 ){
                 echo '
                 <a href="#">
                     <i class="fas fa-bookmark bigMoi"></i>
@@ -152,8 +152,7 @@
         - QUEL CONTROLER ?
         -->
         <?php
-
-
+            require $_SESSION['affichage'];
         ?>
     </div>
 </div>
