@@ -50,8 +50,10 @@
 	function getEchantillons() {
 		require "connectBdd.php";
 
-		$sql = 
-		"SELECT * FROM gsb_echantillon WHERE dateDon IS NULL";
+		$sql = "SELECT gsb_echantillon.*, gsb_medicament.libelle FROM gsb_echantillon 
+		INNER JOIN gsb_lot ON gsb_lot.gsb_numero = gsb_echantillon.gsb_numeroLot
+		INNER JOIN gsb_medicament ON gsb_medicament.id = gsb_lot.gsb_idMedicament
+		WHERE dateSortie IS NULL";
 
 		$exec = $bdd->prepare($sql);
 		$exec->execute();
@@ -69,18 +71,16 @@
 	function getEchantillonsSortis($medicamentId, $dateSortie, $visiteurId) {
 		require "connectBdd.php";
 
-		$sql = 
-		"SELECT 
-		gsb_echantillon.gsb_numero, gsb_lot.gsb_numero, gsb_medicament.libelle, gsb_visitualisateur.gsb_nom, gsb_visitualisateur.gsb_prenom
-		FROM gsb_lot 
-		INNER JOIN gsb_echantillon ON gsb_echantillon.gsb_numeroLot = gsb_lot.gsb_numero
-		INNER JOIN gsb_medicament ON gsb_medicament.id = gsb_lot.gsb_idMedicament
-		INNER JOIN gsb_visitualisateur ON gsb_visitualisateur.gsb_id = gsb_echantillon.gsb_idVisitualisateur
+		$sql = "SELECT gsb_echantillon.gsb_numero, gsb_lot.gsb_numero, gsb_medicament.libelle, gsb_visitualisateur.gsb_nom, gsb_visitualisateur.gsb_prenom
+				FROM gsb_lot 
+				INNER JOIN gsb_echantillon ON gsb_echantillon.gsb_numeroLot = gsb_lot.gsb_numero
+				INNER JOIN gsb_medicament ON gsb_medicament.id = gsb_lot.gsb_idMedicament
+				INNER JOIN gsb_visitualisateur ON gsb_visitualisateur.gsb_id = gsb_echantillon.gsb_idVisitualisateur
 		
-		WHERE gsb_medicament.libelle = ':medicament' AND gsb_echantillon.dateSortie LIKE ':date' AND gsb_visitualisateur.gsb_nom = ':visiteur'
-		
-		ORDER BY gsb_echantillon.gsb_numero, gsb_lot.gsb_numero";
-
+				WHERE gsb_medicament.libelle = ':medicament' AND gsb_echantillon.dateSortie LIKE ':date' AND gsb_visitualisateur.gsb_nom = ':visiteur'
+				
+				ORDER BY gsb_echantillon.gsb_numero, gsb_lot.gsb_numero";
+				
 		$exec = $bdd->prepare($sql);
 		$exec->bindParam('medicament', $medicamentId);
 		$exec->bindParam('date', $dateSortie);
@@ -90,7 +90,7 @@
 		$curseur=$exec->fetchAll();
 		return $curseur;
 	}
-
+	
 	function getMedicaments() {
 		require "connectBdd.php";
 

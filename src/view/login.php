@@ -4,11 +4,11 @@
     <img src="includes/logoGSB.png">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Identifiant:</label>
+    <label for="login">Identifiant:</label>
     <input type="login" class="form-control" aria-describedby="identifiant" placeholder="Entrez identifiant" name = "login">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Mot de passe:</label>
+    <label for="mdp">Mot de passe:</label>
     <input type="password" class="form-control" placeholder="Mot de passe" name ="mdp">
   </div>
 
