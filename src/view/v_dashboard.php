@@ -19,7 +19,7 @@
                 ".$nom." ".$prenom."
             </h3>
             <strong id=\"initialName\" style=\"display: none;\">
-                ".$nomUserInitial."
+                ".substr($nom,0,1).substr($prenom,0,1)."
             </strong>";
             ?>
 
@@ -106,31 +106,25 @@
                 echo '
                 <a href="#">
                     <i class="fas fa-bookmark bigMoi"></i>
-                    <div class="sidebar-text">Renseigne date et medecins a qui l echantillon a été donné </div>
+                    <div class="sidebar-text">Donner un échantillon</div>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <i class="fas fa-bookmark bigMoi"></i>
-                    <div class="sidebar-text">Consulte échantillon par médicaments</div>
+                    <div class="sidebar-text">Echantillon par médicaments</div>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <i class="fas fa-bookmark bigMoi"></i>
-                    <div class="sidebar-text"> Consulte échantillon par date de visite</div>
+                    <div class="sidebar-text"> Echantillon par date de visite</div>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <i class="fas fa-bookmark bigMoi"></i>
-                    <div class="sidebar-text"> Consulte échantillon sortis par date de sortie</div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-bookmark bigMoi"></i>
-                    <div class="sidebar-text"> Consulte échantillon sortis par visiteurs</div>
+                    <div class="sidebar-text"> Echantillon sortis par date de sortie</div>
                 </a>
             </li>
             <li>
