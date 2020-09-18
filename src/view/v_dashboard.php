@@ -150,9 +150,20 @@
     <div class="main-db">
         <!-- Y a moyen de faire en sorte que le controller interviennet ici dans devoir mettre les autres balises dans le footer, je m'en occuprais + tard
         - QUEL CONTROLER ?
-        -->
-        <?php
         
+        
+        for ($i = 0; $i>$_SESSION'affichage'].count;$i++){
+            require $_SESSION['affichage'][$i];
+        }*/
+        
+        
+        echo  $_SESSION['affichage'][1];
+        echo  count($_SESSION['affichage']);-->
+        <?php
+            for ($i = 0; $i<count($_SESSION['affichage']);$i++){
+                $temp = "view/".$_SESSION['affichage'][$i].".php";
+                require $temp;
+            }
         ?>
     </div>
 </div>
