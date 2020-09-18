@@ -1,23 +1,26 @@
 <?php
 if (!isset($_REQUEST['action']))
-	$action = "affichage" ;
+	$action = "newLot" ;
 else
 	$action = $_REQUEST['action'] ;
 	
 switch ($action)
 	{
-	case "affichage" : { 
+	case "newLot" : { 
              
             $nom = $_SESSION['nom'];
             $prenom = $_SESSION['prenom']; 
-            $_SESSION['affichage'] = "view/v_nimp.php";
+            //$_SESSION['affichage'] = "view/v_nimp.php";
             require "view/v_dashboard.php";
-             echo "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww" ; 
-            break ;}           
+            require "view/v_nouveauLot.php";
+            break ;}  
+
+    case "validationNewLot" : {
+    	echo "AAAAAAAAAAAAAAAAAA";
+		break;
+	}
+         
      		
 	}
-	case "autre" : {
-		$_SESSION['affichage'] = "view/2.php"
-	}
-
+	
 ?>
