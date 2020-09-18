@@ -1,5 +1,4 @@
 <form method = "POST" action ="index.php?uc=production&action=validationNewLot">
-	Date de fabrication : <input type="date" name="laDate"></input>
 Medicament : <select name = "medic">
 <?php 
 foreach ($lesMedocs as $leMedoc) {
@@ -8,5 +7,7 @@ foreach ($lesMedocs as $leMedoc) {
  ?>
 	
 </select>
+Nombre d'échantillon : <input type="number" name="nbrEchantillon"></input>
+Date de fabrication : <input type="date" name="laDate"></input>
 	<button type="submit">Enregistré</button>
 </form>

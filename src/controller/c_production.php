@@ -13,15 +13,17 @@ switch ($action)
 			require "includes/modele/gestion_bdd.php";
             $lesMedocs = getMedicaments();
             require "view/v_nouveauLot.php";        
-            
             break ;}  
 
     case "validationNewLot" : {
     	echo "Bravo votre lot est valider";
     	$laDate = $_REQUEST['laDate'];
     	$leMedicament = $_REQUEST['medic'];
+    	$leNbr = $_REQUEST['nbrEchantillon'];
     	echo $laDate;
     	echo $leMedicament;
+    	echo $leNbr;
+    	
     	
 		break;
 	}
