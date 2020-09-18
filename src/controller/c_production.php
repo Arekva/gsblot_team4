@@ -16,7 +16,7 @@ switch ($action)
             break ;}  
 
     case "validationNewLot" : {
-    	echo "AAAAAAAAAAAAAAAAAA";
+    	echo "Bravo votre lot est valider";
 		break;
 	}
          
