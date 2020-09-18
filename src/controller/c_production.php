@@ -7,16 +7,22 @@ else
 switch ($action)
 	{
 	case "newLot" : { 
-             
-            $nom = $_SESSION['nom'];
+			$nom = $_SESSION['nom'];
             $prenom = $_SESSION['prenom']; 
-            //$_SESSION['affichage'] = "view/v_nimp.php";
-            require "view/v_dashboard.php";
-            require "view/v_nouveauLot.php";
+            //require "view/v_dashboard.php";
+			require "includes/modele/gestion_bdd.php";
+            $lesMedocs = getMedicaments();
+            require "view/v_nouveauLot.php";        
+            
             break ;}  
 
     case "validationNewLot" : {
     	echo "Bravo votre lot est valider";
+    	$laDate = $_REQUEST['laDate'];
+    	$leMedicament = $_REQUEST['medic'];
+    	echo $laDate;
+    	echo $leMedicament;
+    	
 		break;
 	}
          
