@@ -7,10 +7,9 @@ else
 switch ($action)
 	{
 	case "newLot" : { 
-			$nom = $_SESSION['nom'];
-            $prenom = $_SESSION['prenom']; 
+			//$nom = $_SESSION['nom'];
+            //$prenom = $_SESSION['prenom']; 
             //require "view/v_dashboard.php";
-			require "includes/modele/gestion_bdd.php";
             $lesMedocs = getMedicaments();
             require "view/v_nouveauLot.php";        
             break ;}  
