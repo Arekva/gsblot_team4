@@ -1,6 +1,13 @@
-<form method = "POST" action ="index.php?uc=production&action=AfficherLotDate">
-Choix de la date : <br>
-Nombre d'échantillon : <input type="date" name="dateDebut"></input>
-Date de fabrication : <input type="date" name="dateFin"></input>
-<button type="submit">Valider</button>
+  <form method = "POST" action ="index.php?uc=production&action=validationNewLot">
+Medicament : <select name = "medic">
+<?php 
+foreach ($lesMedocs as $leMedoc) {
+	echo '<option value ='.$leMedoc['id'].'>'.$leMedoc['libelle'].'</option>' ;
+}
+ ?>
+	
+</select>
+Nombre d'échantillon : <input type="number" name="nbrEchantillon"></input>
+Date de fabrication : <input type="date" name="laDate"></input>
+	<button type="submit">Enregistré</button>
 </form>

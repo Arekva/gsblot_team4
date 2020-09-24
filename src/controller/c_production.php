@@ -1,6 +1,6 @@
 <?php
 if (!isset($_REQUEST['action']))
-	$action = "chooseMedicament" ;
+	$action = "consultLotMedicament" ;
 else
 	$action = $_REQUEST['action'] ;
 	
