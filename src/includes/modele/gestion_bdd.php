@@ -1,5 +1,5 @@
 <?php
-	function getLotMedicament($dateDebut,$dateFin){
+	function getLotDate($dateDebut,$dateFin){
 		require "connectBdd.php";
 		$sql = 'select  *
 		from gsb_lot

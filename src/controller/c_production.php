@@ -42,7 +42,8 @@ switch ($action)
 		$dateFin = $_REQUEST['dateFin'];
 		echo $dateDebut.'<br>';
 		echo $dateFin;
-		//$lesLots = getLotDate($dateDebut,$dateFin);
+		$lesLots = getLotDate($dateDebut,$dateFin);
+		$lesLots[0][0];
 		require "view/v_lotDate.php";
 		break;
 	}
