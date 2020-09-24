@@ -1,6 +1,8 @@
 <h1>Consultation de tous les échantillons en magasin<h1>
 
 <?php
+	
+
 	$totQt = 0;
 
 	foreach($qtMedocs as $medoc) {
