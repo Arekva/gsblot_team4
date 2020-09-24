@@ -115,6 +115,20 @@
 		return $curseur;
 	}
 
+	function getNombreMedicaments() {
+		require "connectBdd.php";
+
+		$sql =
+		"SELECT libelle, COUNT(*) as nombre FROM gsb_medicament INNER JOIN gsb_lot ON gsb_lot.gsb_idMedicament = gsb_medicament.id INNER JOIN gsb_echantillon ON gsb_echantillon.gsb_numeroLot = gsb_lot.gsb_numero
+		WHERE gsb_echantillon.dateSortie IS NULL
+		GROUP BY gsb_medicament.id";
+
+		$exec = $bdd->prepare($sql);
+		$exec->execute();
+		$curseur = $exec->fetchAll();
+		return $curseur;
+	}
+
 
 
 	/*					Consultation					*/

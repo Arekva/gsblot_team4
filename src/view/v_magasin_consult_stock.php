@@ -1,25 +1,28 @@
 <h1>Consultation de tous les échantillons en magasin<h1>
 
 <?php
-	$size = sizeof($echantillons);
+	$totQt = 0;
+
+	foreach($qtMedocs as $medoc) {
+		$totQt += $medoc['nombre']; 
+	}
 	
-	if($size == 0) {
+	if($totQt == 0) {
 		echo 'Aucun échantillon n\'est disponible dans le magasin !';
 	}
 
 	else
 	{
-		echo $size . ' échantillons sont disponibles dans le magasin :<br><br>';
+		echo $totQt . ' échantillons sont disponibles dans le magasin :<br><br>';
 		echo '<table class="table table-striped">   
 			<tr>
-				<th>N°</th>
-				<th>Lot</th>
-				<th>Médicament</th>
+				<th>Échantillon</th>
+				<th>Quantité</th>
 			</tr>';
 				
-		foreach($echantillons as $echantillon) {
+		foreach($qtMedocs as $medoc) {
 
-			echo '<tr><th>' . $echantillon['gsb_numero'] . '</th><th>' . $echantillon['gsb_numeroLot'] . '</th><th>' . $echantillon['libelle'] . '</th></tr>';
+			echo '<tr><th>' . $medoc['libelle'] . '</th><th>' . $medoc['nombre'] . '</th></tr>';
 
 		}
 
