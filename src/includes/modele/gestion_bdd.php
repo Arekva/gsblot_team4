@@ -1,4 +1,16 @@
 <?php
+	function getLotMedicament($dateDebut,$dateFin){
+		require "connectBdd.php";
+		$sql = 'select  *
+		from gsb_lot
+		Where gsb_dateFabrication BETWEEN "'.$dateDebut.'" and "'.$dateFin.'"';
+		$exec=$bdd->prepare($sql) ;
+        $exec->execute() ;
+        $curseur = $exec->fetchAll();
+        return $curseur;
+    	}
+
+
 	function getLotMedicament($medicamentId){
 		require "connectBdd.php";
 		$sql = 'select  *

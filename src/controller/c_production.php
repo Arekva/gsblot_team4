@@ -30,11 +30,22 @@ switch ($action)
 	case "AfficherLotMedicament" :{
 		$leIDmedoc = $_REQUEST['medic'];
 		$lesLots = getLotMedicament($leIDmedoc);
-		echo $lesLots[0][0];
 		require "view/v_lotMedicament.php";
 		break;
 	}
-	//case ""
+	case "chooseDate" : {
+		require "view/v_chooseDate.php";
+		break;
+	}
+	case "AfficherLotDate" :{
+		$dateDebut = $_REQUEST['dateDebut'];
+		$dateFin = $_REQUEST['dateFin'];
+		echo $dateDebut.'<br>';
+		echo $dateFin;
+		//$lesLots = getLotDate($dateDebut,$dateFin);
+		require "view/v_lotDate.php";
+		break;
+	}
  
 	}
 	
