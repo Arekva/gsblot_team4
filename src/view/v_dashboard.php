@@ -33,19 +33,19 @@
             // production
             if ($_SESSION['droit'] == 1){
                 echo '
-                <a href="#">
+                <a href="index.php?uc=production&action=consultLotMedicament">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text">Ajout de lot </div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=production&action=chooseMedicament">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text">Consulter les lots par medicament</div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=production&action=chooseDate">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Consulter les lots par date de production</div>
                 </a>

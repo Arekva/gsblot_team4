@@ -1,17 +1,17 @@
 <?php
 if (!isset($_REQUEST['action']))
-	$action = "consultLotMedicament" ;
+	$action = "chooseMedicament" ;
 else
 	$action = $_REQUEST['action'] ;
 	
 switch ($action)
 	{
-	case "consultLotMedicament" : { 
-			//$nom = $_SESSION['nom'];
-            //$prenom = $_SESSION['prenom']; 
-            //require "view/v_dashboard.php";
-            $lesMedocs = getMedicaments();
-            require "view/v_nouveauLot.php";        
+	case "consultLotMedicament" : {
+            $lesMedocs = getMedicaments(); 
+            $nom = $_SESSION['nom'];
+            $prenom = $_SESSION['prenom']; 
+            $_SESSION['affichage'] = array("v_nouveauLot");     
+            require "view/v_dashboard.php";
             break ;}  
 
     case "validationNewLot" : {
@@ -24,24 +24,40 @@ switch ($action)
 	}
     case "chooseMedicament" : {
     	$lesMedocs = getMedicaments();
-		require "view/v_chooseMedicament.php";
+    	$nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom']; 
+    	$_SESSION['affichage'] = array("v_chooseMedicament");     
+        require "view/v_dashboard.php";
+		//require "view/v_chooseMedicament.php";
 		break;
 	}
 	case "AfficherLotMedicament" :{
 		$leIDmedoc = $_REQUEST['medic'];
 		$lesLots = getLotMedicament($leIDmedoc);
-		require "view/v_lotMedicament.php";
+		$nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom']; 
+    	$_SESSION['affichage'] = array("v_lotMedicament");
+    	require "view/v_dashboard.php";
+    	//require "view/v_lotMedicament.php";
 		break;
 	}
 	case "chooseDate" : {
-		require "view/v_chooseDate.php";
+		$nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom']; 
+    	$_SESSION['affichage'] = array("v_chooseDate");     
+        require "view/v_dashboard.php";
+		//require "view/v_chooseDate.php";
 		break;
 	}
 	case "AfficherLotDate" :{
 		$dateDebut = $_REQUEST['dateDebut'];
 		$dateFin = $_REQUEST['dateFin'];
 		$lesLots = getLotDate($dateDebut,$dateFin);
-		require "view/v_lotDate.php";
+		$nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom']; 
+    	$_SESSION['affichage'] = array("v_lotDate");     
+        require "view/v_dashboard.php";
+		//require "view/v_lotDate.php";
 		break;
 	}
  
