@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 18 sep. 2020 à 15:09
+-- Généré le :  jeu. 24 sep. 2020 à 12:47
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -57,7 +57,19 @@ INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dat
 (7, 15, NULL, NULL, NULL, NULL),
 (8, 15, NULL, NULL, NULL, NULL),
 (9, 15, NULL, NULL, NULL, NULL),
-(10, 15, NULL, NULL, NULL, NULL);
+(10, 15, NULL, NULL, NULL, NULL),
+(1, 16, NULL, NULL, NULL, NULL),
+(2, 16, NULL, NULL, NULL, NULL),
+(1, 17, NULL, NULL, NULL, NULL),
+(2, 17, NULL, NULL, NULL, NULL),
+(3, 17, NULL, NULL, NULL, NULL),
+(4, 17, NULL, NULL, NULL, NULL),
+(5, 17, NULL, NULL, NULL, NULL),
+(1, 18, NULL, NULL, NULL, NULL),
+(2, 18, NULL, NULL, NULL, NULL),
+(3, 18, NULL, NULL, NULL, NULL),
+(4, 18, NULL, NULL, NULL, NULL),
+(5, 18, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -68,20 +80,22 @@ INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dat
 DROP TABLE IF EXISTS `gsb_lot`;
 CREATE TABLE IF NOT EXISTS `gsb_lot` (
   `gsb_numero` int(11) NOT NULL AUTO_INCREMENT,
-  `gsb_dateFabrication` datetime DEFAULT NULL,
+  `gsb_dateFabrication` date DEFAULT NULL,
   `gsb_idMedicament` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_numero`),
   KEY `gsb_idMedicament` (`gsb_idMedicament`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `gsb_lot`
 --
 
 INSERT INTO `gsb_lot` (`gsb_numero`, `gsb_dateFabrication`, `gsb_idMedicament`) VALUES
-(1, '2019-12-10 00:00:00', '3'),
-(15, '2020-01-01 00:00:00', '1'),
-(14, '2020-01-01 00:00:00', '1');
+(1, '2019-12-10', '3'),
+(16, '2020-09-16', '1'),
+(15, '2020-01-01', '1'),
+(17, '2020-01-01', '3'),
+(18, '2020-01-09', '4');
 
 -- --------------------------------------------------------
 
