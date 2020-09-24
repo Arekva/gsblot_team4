@@ -1,12 +1,12 @@
 <?php
 if (!isset($_REQUEST['action']))
-	$action = "newLot" ;
+	$action = "chooseMedicament" ;
 else
 	$action = $_REQUEST['action'] ;
 	
 switch ($action)
 	{
-	case "newLot" : { 
+	case "consultLotMedicament" : { 
 			//$nom = $_SESSION['nom'];
             //$prenom = $_SESSION['prenom']; 
             //require "view/v_dashboard.php";
@@ -22,13 +22,15 @@ switch ($action)
     	echo "Bravo l'ajout de votre lot est validé";
 		break;
 	}
-    case "consultLotMedicament" : {
+    case "chooseMedicament" : {
     	$lesMedocs = getMedicaments();
 		require "view/v_chooseMedicament.php";
 		break;
 	}
 	case "AfficherLotMedicament" :{
 		$leIDmedoc = $_REQUEST['medic'];
+		$lesLots = getLotMedicament($leIDmedoc);
+		echo $lesLots[0][0];
 		require "view/v_lotMedicament.php";
 		break;
 	}

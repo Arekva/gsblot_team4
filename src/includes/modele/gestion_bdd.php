@@ -1,4 +1,17 @@
 <?php
+	function getLotMedicament($medicamentId){
+		require "connectBdd.php";
+		$sql = 'select  *
+		from gsb_lot
+		Where gsb_idMedicament = '.$medicamentId;
+		$exec=$bdd->prepare($sql) ;
+        $exec->execute() ;
+        $curseur = $exec->fetchAll();
+        return $curseur;
+    	}
+
+
+
 	function AjoutNewLot($doute,$medocID,$nbEchantillon){
 		require "connectBdd.php";
 		$sql = 'insert into gsb_lot (gsb_dateFabrication,gsb_idMedicament)
@@ -10,7 +23,6 @@
 		$exec=$bdd->prepare($sql) ;
         $exec->execute() ;
         $curseur = $exec->fetchAll();
-        //echo $curseur[0][0];
         
         for ($i=1; $i < $nbEchantillon+1; $i++) { 
         	$sql = 'insert into gsb_echantillon (gsb_numero, gsb_numeroLot)
