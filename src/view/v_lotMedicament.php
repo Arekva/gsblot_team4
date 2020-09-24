@@ -6,7 +6,10 @@
 <?php 
 foreach ($lesLots as $leLot) {
 	echo '<td>'.$leLot['gsb_numero'].'</td>
-	<td>'.$leLot['gsb_dateFabrication'].'</td> <tr>';
+	<td>'.$leLot['gsb_dateFabrication'].'</td> 
+	<td>'.$leLot['nbEchantillon'].'</td> 
+
+	<tr>';
 }
 ?>
     </table>

@@ -40,10 +40,7 @@ switch ($action)
 	case "AfficherLotDate" :{
 		$dateDebut = $_REQUEST['dateDebut'];
 		$dateFin = $_REQUEST['dateFin'];
-		echo $dateDebut.'<br>';
-		echo $dateFin;
 		$lesLots = getLotDate($dateDebut,$dateFin);
-		$lesLots[0][0];
 		require "view/v_lotDate.php";
 		break;
 	}

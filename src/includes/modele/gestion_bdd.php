@@ -1,9 +1,12 @@
 <?php
 	function getLotDate($dateDebut,$dateFin){
 		require "connectBdd.php";
-		$sql = 'select  *
-		from gsb_lot
-		Where gsb_dateFabrication BETWEEN "'.$dateDebut.'" and "'.$dateFin.'"';
+		$sql = 'select  gsb_lot.gsb_numero, gsb_dateFabrication, libelle, count(*) as nbEchantillon 
+		from gsb_lot 
+        inner join gsb_medicament on gsb_medicament.id = gsb_lot.gsb_idMedicament 
+        inner join gsb_echantillon on gsb_echantillon.gsb_numeroLot = gsb_lot.gsb_numero 
+		Where gsb_dateFabrication BETWEEN "'.$dateDebut.'" and "'.$dateFin.'"  
+        GROUP by gsb_numero, gsb_dateFabrication, libelle';
 		$exec=$bdd->prepare($sql) ;
         $exec->execute() ;
         $curseur = $exec->fetchAll();
@@ -13,9 +16,11 @@
 
 	function getLotMedicament($medicamentId){
 		require "connectBdd.php";
-		$sql = 'select  *
+		$sql = 'select gsb_lot.gsb_numero,gsb_dateFabrication, count(*) as nbEchantillon
 		from gsb_lot
-		Where gsb_idMedicament = '.$medicamentId;
+        inner join gsb_echantillon on gsb_echantillon.gsb_numeroLot = gsb_lot.gsb_numero
+		Where gsb_idMedicament = '.$medicamentId.' 
+        group by gsb_lot.gsb_numero,gsb_dateFabrication';
 		$exec=$bdd->prepare($sql) ;
         $exec->execute() ;
         $curseur = $exec->fetchAll();
