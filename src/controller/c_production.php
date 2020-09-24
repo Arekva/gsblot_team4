@@ -24,10 +24,17 @@ switch ($action)
 		break;
 	}
     case "consultLotMedicament" : {
-	//require "view/.."
+    	$lesMedocs = getMedicaments();
+		require "view/v_chooseMedicament.php";
 		break;
 	}
-
+	case "AfficherLotMedicament" :{
+		$leIDmedoc = $_REQUEST['medic'];
+		echo $leIDmedoc;
+		require "view/v_lotMedicament.php";
+		break;
+	}
+	case ""
  
 	}
 	

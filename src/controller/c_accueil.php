@@ -14,7 +14,6 @@ switch ($action)
             
             $id = $_REQUEST['login'];
             $mdp = $_REQUEST['mdp'];
-            require "includes/modele/gestion_bdd.php";
             $user = getUser($id,$mdp);
             if (count($user) > 0){
                 $NivoAutorisation = $user[0]['gsb_autorisation'];   

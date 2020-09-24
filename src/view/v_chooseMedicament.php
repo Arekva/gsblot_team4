@@ -1,6 +1,6 @@
-<!--
-<form method = "POST" action ="index.php?uc=production&action=validationNewLot">
-Medicament : <select name = "medic">
+
+<form method = "POST" action ="index.php?uc=production&action=AfficherLotMedicament">
+Veuillez choisir un médicament : <select name = "medic">
 <?php 
 foreach ($lesMedocs as $leMedoc) {
 	echo '<option value ='.$leMedoc['id'].'>'.$leMedoc['libelle'].'</option>' ;
@@ -8,4 +8,5 @@ foreach ($lesMedocs as $leMedoc) {
  ?>
 	
 </select>
--->
+<button type="submit">Voir</button>
+</form>
