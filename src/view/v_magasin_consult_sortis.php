@@ -19,7 +19,7 @@ Visiteur :
         foreach($visiteurs as $visit) echo '<option value ="' . $visit['gsb_id'] . '">' . $visit['gsb_nom'] . ' ' . substr($visit['gsb_prenom'],0,1) . '.';
     ?>
     </select> 
-<button type="submit">Rechercher</button>
+    <button type="submit">Rechercher</button>
 </form>
 
 

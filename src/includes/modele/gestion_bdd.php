@@ -120,8 +120,6 @@
 				"AND " . ($visiteurId == "aucun" ? "1 " : "gsb_visitualisateur.gsb_nom = ':visiteur' ") . "
 				ORDER BY gsb_echantillon.gsb_numero, gsb_lot.gsb_numero";
 				
-		echo var_dump($dateSortie);
-		echo var_dump($sql);
 		$exec = $bdd->prepare($sql);
 		$exec->bindParam('medicament', $medicamentId);
 		$exec->bindParam('date', $dateSortie);
