@@ -91,7 +91,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=deconnexion">
                     <i class="fas fa-share bigMoi"></i>
                     <div class="sidebar-text">DISCONNECT</div>
                 </a>
@@ -128,7 +128,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=deconnexion">
                     <i class="fas fa-share bigMoi"></i>
                     <div class="sidebar-text">DISCONNECT</div>
                 </a>

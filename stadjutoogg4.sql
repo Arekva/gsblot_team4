@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 24 sep. 2020 à 12:47
+-- Généré le :  ven. 02 oct. 2020 à 14:29
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -167,9 +167,9 @@ CREATE TABLE IF NOT EXISTS `gsb_visitualisateur` (
 --
 
 INSERT INTO `gsb_visitualisateur` (`gsb_id`, `gsb_login`, `gsb_mdp`, `gsb_autorisation`, `gsb_nom`, `gsb_prenom`) VALUES
-('1', 'aaa', 'mdp', '1', 'ProdUilla', 'UillaProd'),
-('2', 'bbb', 'mdp', '2', 'jeanMagasine', 'magosinJean'),
-('3', 'ccc', 'mdp', '3', 'SteveVisiteur', 'VisiteurSteve'),
+('1', 'aaa', 'mdp', '1', 'Produilla', 'Laura'),
+('2', 'bbb', 'mdp', '2', 'Jeanmagasine', 'Détruc'),
+('3', 'ccc', 'mdp', '3', 'Jeanvévoir', 'medocin'),
 ('4', 'ddd', 'mdp', '3', 'Visiteur2', 'VistorTwo'),
 ('5', 'eee', 'mdp', '3', 'Visiteur3', 'VistorThree');
 COMMIT;
