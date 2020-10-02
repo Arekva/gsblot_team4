@@ -25,7 +25,10 @@ body{
     padding:30px;
     width:300px;
     border-radius: 3px;
+
 }
+
+/* Rajouter par gaétan */
 .formGaetan {
     box-shadow: 0 0 15px rgba(128, 128, 128, 0.493);
     padding:30px;
@@ -41,16 +44,8 @@ body{
     display: flex;
 }
 
-.boite{
-
-}
-
 .gaetanInput{
     width: 150px;
-}
-
-table {
-    /*margin: 15px;*/
 }
 
 /*          DASHBOARD           */
