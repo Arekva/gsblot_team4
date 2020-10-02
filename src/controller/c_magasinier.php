@@ -1,6 +1,6 @@
 <?php
 
-$echantillons = getEchantillons();
+$echantillons = getEchantillonsEnStock();
 $qtMedocs = getNombreMedicaments();
 $medicaments = getMedicaments();
 
@@ -17,7 +17,7 @@ switch($mode) {
     break;
 
     case "consultationSortis":
-        include "view/v_magasin_consult_stock.php";
+        include "view/v_magasin_consult_sortis.php";
     break;
 
     case "renseignement":

@@ -76,7 +76,7 @@
 	 * Récupère tous les échantillions disponibles.
 	 * @return curseur : tableau 2D contenant tous les échantillions non donnés.
 	 */
-	function getEchantillons() {
+	function getEchantillonsEnStock() {
 		require "connectBdd.php";
 
 		$sql = "SELECT gsb_echantillon.*, gsb_medicament.libelle FROM gsb_echantillon 
