@@ -3,6 +3,7 @@
 $echantillons = getEchantillonsEnStock();
 $qtMedocs = getNombreMedicaments();
 $medicaments = getMedicaments();
+$visiteurs = getLesVisiteurs();
 
 
 
@@ -17,6 +18,10 @@ switch($mode) {
     break;
 
     case "consultationSortis":
+        if(isset($_REQUEST['medicamentID']))
+        {
+            $filtre = getEchantillonsSortis($_REQUEST['medicamentID'], $_REQUEST['dateSortie'], $_REQUEST['visiteurID']);
+        }
         include "view/v_magasin_consult_sortis.php";
     break;
 

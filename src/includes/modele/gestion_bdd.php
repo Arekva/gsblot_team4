@@ -11,7 +11,16 @@
         $exec->execute() ;
         $curseur = $exec->fetchAll();
         return $curseur;
-    	}
+		}
+		
+	function getLesVisiteurs() {
+		require "connectBdd.php";
+		$sql = "SELECT * FROM gsb_visitualisateur WHERE gsb_autorisation = 3";
+		$exec=$bdd->prepare($sql) ;
+        $exec->execute() ;
+        $curseur = $exec->fetchAll();
+        return $curseur;
+	}
 
 
 	function getLotMedicament($medicamentId){
@@ -105,11 +114,14 @@
 				INNER JOIN gsb_echantillon ON gsb_echantillon.gsb_numeroLot = gsb_lot.gsb_numero
 				INNER JOIN gsb_medicament ON gsb_medicament.id = gsb_lot.gsb_idMedicament
 				INNER JOIN gsb_visitualisateur ON gsb_visitualisateur.gsb_id = gsb_echantillon.gsb_idVisitualisateur
-		
-				WHERE gsb_medicament.libelle = ':medicament' AND gsb_echantillon.dateSortie LIKE ':date' AND gsb_visitualisateur.gsb_nom = ':visiteur'
-				
+				WHERE " .
+				($medicamentId == "aucun" ? "1 " : "gsb_medicament.libelle = ':medicament' ") . 
+				"AND " . ($dateSortie == '' ? "1 " : "gsb_echantillon.dateSortie LIKE ':date' ") .
+				"AND " . ($visiteurId == "aucun" ? "1 " : "gsb_visitualisateur.gsb_nom = ':visiteur' ") . "
 				ORDER BY gsb_echantillon.gsb_numero, gsb_lot.gsb_numero";
 				
+		echo var_dump($dateSortie);
+		echo var_dump($sql);
 		$exec = $bdd->prepare($sql);
 		$exec->bindParam('medicament', $medicamentId);
 		$exec->bindParam('date', $dateSortie);

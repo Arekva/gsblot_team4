@@ -1,4 +1,4 @@
-<h1>Consultation de tous les échantillons en magasin<h1>
+<h1>Consultation de tous les échantillons en magasin</h1>
 
 <?php
 	
@@ -18,7 +18,7 @@
 		echo $totQt . ' échantillons sont disponibles dans le magasin :<br><br>';
 		echo '<table class="table table-striped">   
 			<tr>
-				<th>Échantillon</th>
+				<th>Médicament</th>
 				<th>Quantité</th>
 			</tr>';
 				
