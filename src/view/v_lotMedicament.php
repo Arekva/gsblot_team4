@@ -1,7 +1,7 @@
 <table class="table table-striped">  
             <th>Numero du LOT </th>
-            <th>date de Frabrication   </th>
-            <th>NB echantillon</th>  
+            <th>Date de Frabrication   </th>
+            <th>Nombre d'échantillons</th>  
         </tr>
 <?php 
 foreach ($lesLots as $leLot) {

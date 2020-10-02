@@ -15,11 +15,15 @@ switch ($action)
             break ;}  
 
     case "validationNewLot" : {
+    	$nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom'];
+        $lesMedocs = getMedicaments(); 
+    	require "view/v_dashboard.php"; 
     	$laDate = $_REQUEST['laDate'];
     	$leIDmedoc = $_REQUEST['medic'];
     	$leNbr = $_REQUEST['nbrEchantillon'];
     	AjoutNewLot($laDate,$leIDmedoc,$leNbr);
-    	echo "Bravo l'ajout de votre lot est validé";
+    	echo "<script>alert(\"Succés ! le nouveau lot a été ajouter.\")</script>";
 		break;
 	}
     case "chooseMedicament" : {

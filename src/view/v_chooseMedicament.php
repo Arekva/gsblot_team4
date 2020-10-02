@@ -1,6 +1,7 @@
-<form method = "POST" action ="index.php?uc=production&action=AfficherLotMedicament">
-	<h3>Consultation par médicament</h3><br><br>
-Veuillez choisir un médicament : <br><select name = "medic">
+<form method = "POST" action ="index.php?uc=production&action=AfficherLotMedicament" class = "formGaetan">
+	<div class="CenterElement">
+	<h3>Consultation par médicament</h3><br>
+Choix du médicament : <select name = "medic">
 <?php 
 foreach ($lesMedocs as $leMedoc) {
 	echo '<option value ='.$leMedoc['id'].'>'.$leMedoc['libelle'].'</option>' ;
@@ -8,5 +9,5 @@ foreach ($lesMedocs as $leMedoc) {
  ?>
 	
 </select><br><br>
-<button type="submit">Voir</button>
+<button type="submit" class="btn btn-primary">Valider</button></div>
 </form>
