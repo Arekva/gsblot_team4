@@ -59,6 +59,41 @@
 		
 	}
 
+	function ajoutSortie($idVisitualisateur, $nomMedecin, $prenomMedecin, $numEchantillion, $numLot)
+	{
+		require "connectionBdd.php";
+
+		$sql = 
+		"UPDATE gsb_echantillon SET dateSortie = ':date', gsb_idVisitualisateur = 
+		:idUser, gsb_matriculeMedecins = ':matMedecin' WHERE gsb_numero = :numEch AND gsb_numeroLot = :numLot";
+
+		$exec=$bdd->prepare($sql);
+		$exec->bindParam('date', date("Y-m-d H:i:s"));
+		$exec->bindParam('idUser', $idVisitualisateur);
+
+		$exec->bindParam('matMedecin', getMedecin($nomMedecin, $prenomMedecin));
+
+		$exec->bindParam('numEch', $numEchantillion);
+		$exec->bindParam('numLot', $numLot);
+
+		$exec->execute();
+	}
+
+	function getMedecin($nom, $prenom)
+	{
+		require_once "connectionBdd.php";
+
+		$sql = 
+		"SELECT * FROM gsb_medecins WHERE LOWER(gsb_nom) = LOWER(':nom') 
+		AND LOWER(gsb_prenom) = LOWER(':prenom')";
+
+		$exec=$bdd->prepare($sql);
+		$exec->bindParam("nom", $nom);
+		$exec->bindParam("prenom", $prenom);
+		$exec->execute();
+		return $exec->fetchAll();
+	}
+
 	/**
 	 * Récupère un utilisateur selon un identifiant.
 	 * @param username : nom d'utilisateur du compte
