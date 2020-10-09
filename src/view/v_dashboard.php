@@ -103,7 +103,7 @@
             //visiteur
             if ($_SESSION['droit'] == 3 ){
                 echo '
-                <a href="#">
+                <a href="index.php?uc=visiteurs&action=ChoixMedicDateMedecin">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text">Donner un échantillon</div>
                 </a>

@@ -280,7 +280,7 @@
 				$sql = "UPDATE gsb_echantillon
 						SET dateDon = \"".$date."\", gsb_matriculeMedecins = \"".$codeMedecin."\"
 						WHERE gsb_numero = $idEchantillion
-						AND gsb_numeroLot = $idLot";
+						AND gsb_numeroLot = $idLot ";
 				echo $sql;
 				$exec=$bdd->prepare($sql);
 				
