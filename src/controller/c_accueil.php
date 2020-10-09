@@ -13,7 +13,7 @@ switch ($action)
     case "authentification" : {
             
             $id = $_REQUEST['login'];
-            $mdp = $_REQUEST['mdp'];
+            $mdp = md5($_REQUEST['mdp']);
             $user = getUser($id,$mdp);
             if (count($user) > 0){
                 $NivoAutorisation = $user[0]['gsb_autorisation'];   

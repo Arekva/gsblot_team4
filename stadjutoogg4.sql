@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 02 oct. 2020 à 14:50
+-- Généré le :  ven. 09 oct. 2020 à 11:57
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -503,11 +503,11 @@ CREATE TABLE IF NOT EXISTS `gsb_visitualisateur` (
 --
 
 INSERT INTO `gsb_visitualisateur` (`gsb_id`, `gsb_login`, `gsb_mdp`, `gsb_autorisation`, `gsb_nom`, `gsb_prenom`) VALUES
-('1', 'aaa', 'mdp', '1', 'Produilla', 'Laura'),
-('2', 'bbb', 'mdp', '2', 'Jeanmagasine', 'Détruc'),
-('3', 'ccc', 'mdp', '3', 'Jeanvévoir', 'medocin'),
-('4', 'ddd', 'mdp', '3', 'Visiteur2', 'VistorTwo'),
-('5', 'eee', 'mdp', '3', 'Visiteur3', 'VistorThree');
+('1', 'aaa', 'aa36dc6e81e2ac7ad03e12fedcb6a2c0', '1', 'Produilla', 'Laura'),
+('2', 'bbb', 'aa36dc6e81e2ac7ad03e12fedcb6a2c0', '2', 'Jeanmagasine', 'Détruc'),
+('3', 'ccc', 'aa36dc6e81e2ac7ad03e12fedcb6a2c0', '3', 'Jeanvévoir', 'medocin'),
+('4', 'ddd', 'aa36dc6e81e2ac7ad03e12fedcb6a2c0', '3', 'Visiteur2', 'VistorTwo'),
+('5', 'eee', 'aa36dc6e81e2ac7ad03e12fedcb6a2c0', '3', 'Visiteur3', 'VistorThree');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
