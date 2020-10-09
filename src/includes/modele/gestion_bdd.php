@@ -220,17 +220,4 @@
 			}
 
 
-
-
-		///		Production
-
-
-
-
-		///		Magasin
-
-	/*					FinConsulation					*/
-
-
-
 ?>
