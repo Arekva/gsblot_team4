@@ -1,3 +1,6 @@
+<?php
+include "view/v_magasin_choix.php";
+?>
 <h1>Consultation des échantillons sortis</h1>
 
 <form method = "POST" action ="index.php?uc=magasinier&action=consultationSortis">

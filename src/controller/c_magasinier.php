@@ -10,23 +10,36 @@ $visiteurs = getLesVisiteurs();
 if(!isset($_REQUEST['action']))$mode = "consultationMedocs";
 else $mode = $_REQUEST['action'];
 
-include "view/v_magasin_choix.php";
+
+
+$nom = $_SESSION['nom'];
+$prenom = $_SESSION['prenom']; 
 
 switch($mode) {
     case "consultationMedocs":
-        include "view/v_magasin_consult_stock.php";
+        $nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom']; 
+        $_SESSION['affichage'] = array("v_magasin_consult_stock");
+        require "view/v_dashboard.php";
     break;
 
     case "consultationSortis":
+        //require "view/v_dashboard.php";
         if(isset($_REQUEST['medicamentID']))
         {
             $filtre = getEchantillonsSortis($_REQUEST['medicamentID'], $_REQUEST['dateSortie'], $_REQUEST['visiteurID']);
         }
-        include "view/v_magasin_consult_sortis.php";
+        $nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom']; 
+        $_SESSION['affichage'] = array("v_magasin_consult_sortis");
+        require "view/v_dashboard.php";
     break;
 
     case "renseignement":
-        include "view/v_magasin_consult_stock.php";
+        $nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom']; 
+        $_SESSION['affichage'] = array("v_magasin_consult_sortis");
+        require "view/v_magasin_renseignement.php";
     break;
 
     default:

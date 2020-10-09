@@ -1,3 +1,7 @@
+<?php
+include "view/v_magasin_choix.php";
+?>
+
 <h1>Consultation de tous les échantillons en magasin</h1>
 
 <?php
