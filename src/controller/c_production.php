@@ -23,7 +23,7 @@ switch ($action)
     	$leIDmedoc = $_REQUEST['medic'];
     	$leNbr = $_REQUEST['nbrEchantillon'];
     	AjoutNewLot($laDate,$leIDmedoc,$leNbr);
-    	echo "<script>alert(\"Succés ! le nouveau lot a été ajouter.\")</script>";
+    	
 		break;
 	}
     case "chooseMedicament" : {

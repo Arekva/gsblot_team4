@@ -13,7 +13,6 @@
 
             <!-- nom Dashboard -->
             <?php
-            $nomUserInitial = "pasFait";
             echo "
             <h3 id=\"fullName\">
                 ".$nom." ".$prenom."

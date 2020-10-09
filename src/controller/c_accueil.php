@@ -33,6 +33,9 @@ switch ($action)
                 $_SESSION['droit'] = $user[0]['gsb_autorisation'];
                 $_SESSION['nom'] =  $nom;
                 $_SESSION['prenom'] = $prenom; 
+                $_SESSION['id'] = $user[0]['gsb_id'];
+                
+                
                 header("Location:index.php?uc=".$uc);              
                 }
                 else {echo "<script>alert(\"Erreur mauvais identifiants\")</script>";

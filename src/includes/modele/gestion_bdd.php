@@ -169,14 +169,14 @@
 			*/
 			function getEchantillonMedicament($libelleMedicament) {
 				require "connectBdd.php";
-				$sql = "SELECT gsb_echantillon.*
+				$sql = "SELECT *
 						FROM gsb_echantillon
 						WHERE gsb_echantillon.gsb_numero 
 						IN (SELECT gsb_lot.gsb_numero 
 							FROM gsb_lot 
 							INNER JOIN gsb_medicament 
 							ON gsb_medicament.id = gsb_lot.gsb_idMedicament 
-							WHERE libelle = ".$libelleMedicament.");";
+							WHERE libelle = '".$libelleMedicament."');";
 				$exec=$bdd->prepare($sql);
 				$exec->execute();
 				$curseur=$exec->fetchAll();
@@ -219,5 +219,38 @@
 				return $curseur;
 			}
 
+			function getLesMedecins() {
+				require "connectBdd.php";
+				$sql = "SELECT gsb_matricule, gsb_nom, gsb_prenom
+						FROM gsb_medecins;";
+				$exec=$bdd->prepare($sql);
+				$exec->execute();
+				$curseur=$exec->fetchAll();
+				return $curseur;
+			}
+
+			function getVisiteurEchantillonDispo($idVisit,$idMedicament){
+				require "connectBdd.php";
+				$sql = "SELECT * from gsb_echantillon
+				inner join gsb_lot on gsb_lot.gsb_numero = gsb_echantillon.gsb_numeroLot
+				where dateDon is null and gsb_idvisitualisateur =".$idVisit." AND gsb_idMedicament =".$idMedicament."" ;
+				$exec=$bdd->prepare($sql);
+				$exec->execute();
+				$curseur=$exec->fetchAll();
+				return $curseur;
+			}
+
+			function setDonnation($date,$codeMedecin,$idLot,$idEchantillion) {
+				require "connectBdd.php";
+				$sql = "UPDATE gsb_echantillon
+						SET dateDon = \"".$date."\", gsb_matriculeMedecins = \"".$codeMedecin."\"
+						WHERE gsb_numero = $idEchantillion
+						AND gsb_numeroLot = $idLot";
+				echo $sql;
+				$exec=$bdd->prepare($sql);
+				
+				$exec->execute();
+
+			}
 
 ?>
