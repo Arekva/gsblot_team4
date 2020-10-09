@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
@@ -6,6 +6,8 @@
 -- Généré le :  ven. 09 oct. 2020 à 11:57
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
+
+--a
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
