@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `gsb_echantillon` (
   KEY `gsb_idVisitualisateur` (`gsb_idVisitualisateur`),
   KEY `gsb_matriculeMedecins` (`gsb_matriculeMedecins`),
   KEY `gsb_numeroLot` (`gsb_numeroLot`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `gsb_echantillon`
@@ -400,7 +400,7 @@ CREATE TABLE IF NOT EXISTS `gsb_lot` (
   `gsb_idMedicament` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_numero`),
   KEY `gsb_idMedicament` (`gsb_idMedicament`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `gsb_lot`
@@ -445,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `gsb_medecins` (
   `gsb_nom` varchar(50) DEFAULT NULL,
   `gsb_prenom` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_matricule`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `gsb_medecins`
@@ -468,7 +468,7 @@ CREATE TABLE IF NOT EXISTS `gsb_medicament` (
   `id` int(11) NOT NULL,
   `libelle` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `gsb_medicament`
@@ -496,7 +496,7 @@ CREATE TABLE IF NOT EXISTS `gsb_visitualisateur` (
   `gsb_nom` varchar(50) DEFAULT NULL,
   `gsb_prenom` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `gsb_visitualisateur`
