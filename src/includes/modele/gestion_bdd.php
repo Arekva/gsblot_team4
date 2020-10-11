@@ -281,11 +281,74 @@
 						SET dateDon = \"".$date."\", gsb_matriculeMedecins = \"".$codeMedecin."\"
 						WHERE gsb_numero = $idEchantillion
 						AND gsb_numeroLot = $idLot ";
-				echo $sql;
 				$exec=$bdd->prepare($sql);
 				
 				$exec->execute();
 
 			}
 
+			function getDateDonEchantillon(){
+				require "connectBdd.php";
+				$sql = "
+				SELECT DISTINCT gsb_echantillon.dateDon
+				FROM gsb_echantillon
+				WHERE gsb_echantillon.dateDon IS NOT NULL;
+				";
+				$exec=$bdd->prepare($sql);
+				$exec->execute();
+				$curseur=$exec->fetchAll();
+				return $curseur;
+
+			}
+
+			function getDateSortieEchantillon(){
+				require "connectBdd.php";
+				$sql = "
+				SELECT DISTINCT gsb_echantillon.dateSortie 
+				FROM gsb_echantillon 
+				WHERE gsb_echantillon.dateSortie IS NOT NULL 
+				";
+				$exec=$bdd->prepare($sql);
+				$exec->execute();
+				$curseur=$exec->fetchAll();
+				return $curseur;
+
+			}
+
+			function getEchantillonParDateDon($datee){
+				require "connectBdd.php";
+				$sql = "
+				SELECT gsb_echantillon.gsb_numero as numero, gsb_echantillon.gsb_numeroLot as numeroLot, gsb_medecins.gsb_nom as nomMedecin, gsb_medecins.gsb_prenom as prenomMedecin
+				FROM gsb_echantillon 
+				INNER JOIN gsb_medecins
+				ON gsb_medecins.gsb_matricule = gsb_echantillon.gsb_matriculeMedecins
+				WHERE gsb_echantillon.dateDon = '$date'
+				ORDER BY numero,numeroLot;
+				";
+				$exec=$bdd->prepare($sql);
+				$exec->execute();
+				$curseur=$exec->fetchAll();
+				return $curseur;
+
+			}
+
+			function getEchantillonParDateSortie($date){
+				require "connectBdd.php";
+				$sql = "
+				SELECT gsb_echantillon.gsb_numero as numero, gsb_echantillon.gsb_numeroLot as numeroLot
+				FROM gsb_echantillon 
+				WHERE gsb_echantillon.dateDon = '$date'
+				ORDER BY numero,numeroLot
+				";
+				$exec=$bdd->prepare($sql);
+				$exec->execute();
+				$curseur=$exec->fetchAll();
+				return $curseur;
+
+			}
+			/*SELECT gsb_echantillon.gsb_numero as numero, gsb_echantillon.gsb_numeroLot as numeroLot, gsb_medecins.gsb_nom as nomMedecin, gsb_medecins.gsb_prenom as prenomMedecin
+FROM gsb_echantillon 
+INNER JOIN gsb_medecins
+ON gsb_medecins.gsb_matricule = gsb_echantillon.gsb_matriculeMedecins
+ORDER BY numero,numeroLot*/
 ?>

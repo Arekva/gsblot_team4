@@ -109,19 +109,19 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=visiteurs&action=ConsulterParMedoc">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text">Echantillon par médicaments</div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=visiteurs&action=ConsulterParDateVisite">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Echantillon par date de visite</div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=visiteurs&action=ConsulterParDateSortie">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Echantillon sortis par date de sortie</div>
                 </a>
