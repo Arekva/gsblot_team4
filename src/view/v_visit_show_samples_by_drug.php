@@ -1,4 +1,4 @@
-<form class="form" method="Post"  action="index.php?uc=visiteurs&action=donTableau">
+<form class="form" method="Post"  action="index.php?uc=visiteurs&action=ConsulterParMedocTab">
 
     <div class="form-group">
         <label for="inputState">Selectionnez médicament</label>

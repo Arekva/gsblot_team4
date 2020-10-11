@@ -287,6 +287,12 @@
 
 			}
 
+
+
+
+
+
+
 			function getDateDonEchantillon(){
 				require "connectBdd.php";
 				$sql = "
@@ -301,21 +307,7 @@
 
 			}
 
-			function getDateSortieEchantillon(){
-				require "connectBdd.php";
-				$sql = "
-				SELECT DISTINCT gsb_echantillon.dateSortie 
-				FROM gsb_echantillon 
-				WHERE gsb_echantillon.dateSortie IS NOT NULL 
-				";
-				$exec=$bdd->prepare($sql);
-				$exec->execute();
-				$curseur=$exec->fetchAll();
-				return $curseur;
-
-			}
-
-			function getEchantillonParDateDon($datee){
+			function getEchantillonParDateDon($date){
 				require "connectBdd.php";
 				$sql = "
 				SELECT gsb_echantillon.gsb_numero as numero, gsb_echantillon.gsb_numeroLot as numeroLot, gsb_medecins.gsb_nom as nomMedecin, gsb_medecins.gsb_prenom as prenomMedecin
@@ -332,12 +324,31 @@
 
 			}
 
-			function getEchantillonParDateSortie($date){
+
+
+
+
+			function getMedecinEchantillon(){
+				require "connectBdd.php";
+				$sql = "
+				SELECT DISTINCT gsb_echantillon.gsb_matriculeMedecins as matricule, gsb_medecins.gsb_nom as nomMedecin, gsb_medecins.gsb_prenom as prenomMedecin
+				FROM gsb_echantillon 
+				INNER JOIN gsb_medecins
+				ON gsb_medecins.gsb_matricule =gsb_echantillon.gsb_matriculeMedecins
+				";
+				$exec=$bdd->prepare($sql);
+				$exec->execute();
+				$curseur=$exec->fetchAll();
+				return $curseur;
+
+			}
+
+			function getEchantillonParMedecin($matricule){
 				require "connectBdd.php";
 				$sql = "
 				SELECT gsb_echantillon.gsb_numero as numero, gsb_echantillon.gsb_numeroLot as numeroLot
 				FROM gsb_echantillon 
-				WHERE gsb_echantillon.dateSortie = '$date'
+				WHERE gsb_echantillon.gsb_matriculeMedecins = '$matricule'
 				ORDER BY numero,numeroLot
 				";
 				$exec=$bdd->prepare($sql);
@@ -345,6 +356,19 @@
 				$curseur=$exec->fetchAll();
 				return $curseur;
 
+			}
+
+			function getUnMedecin($matricule){
+				require "connectBdd.php";
+				$sql = "
+				SELECT gsb_medecins.gsb_nom as nomMedecin, gsb_medecins.gsb_prenom as prenomMedecin
+				FROM gsb_medecins
+				WHERE gsb_medecins.gsb_matricule = '$matricule'
+				";
+				$exec=$bdd->prepare($sql);
+				$exec->execute();
+				$curseur=$exec->fetchAll();
+				return $curseur;
 			}
 			/*SELECT gsb_echantillon.gsb_numero as numero, gsb_echantillon.gsb_numeroLot as numeroLot, gsb_medecins.gsb_nom as nomMedecin, gsb_medecins.gsb_prenom as prenomMedecin
 FROM gsb_echantillon 

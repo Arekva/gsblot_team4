@@ -78,11 +78,14 @@ switch ($action)
     case "ConsulterParMedocTab" :{ 
 
 
-        $lesMedicaments = getMedicaments();
+        $medoc = $_REQUEST['medicament'];
+            
+        
+        $ADonner = getVisiteurEchantillonDispo($_SESSION['id'],$medoc);
 
         $nom = $_SESSION['nom'];
         $prenom = $_SESSION['prenom']; 
-        $_SESSION['affichage'] = array("v_visit_show_samples_by_drug");
+        $_SESSION['affichage'] = array("v_visit_tabdrug");
         require "view/v_dashboard.php";
             
         
@@ -125,9 +128,9 @@ switch ($action)
 
 
 
-    case "ConsulterParDateSortie" :{ 
+    case "ConsulterParMedecin" :{ 
 
-        $lesDates = getDateSortieEchantillon();
+        $lesMedecins = getMedecinEchantillon();
 
         $nom = $_SESSION['nom'];
         $prenom = $_SESSION['prenom']; 
@@ -137,11 +140,11 @@ switch ($action)
         
         break ;
         } 
-    case "ConsulterParDateSortieTab" :{ 
+    case "ConsulterParMedecinTab" :{ 
 
-        $date = $_REQUEST['date'];
-
-        $lesDates = getEchantillonParDateSortie($date);
+        $matricule = $_REQUEST['matricule'];
+        $medecin = getUnMedecin($matricule);
+        $lesEchantillons = getEchantillonParMedecin($matricule);
 
         $nom = $_SESSION['nom'];
         $prenom = $_SESSION['prenom']; 

@@ -1,5 +1,5 @@
 <form>
-<h1>Tableau "Echantillon sortie" du <?php echo $date?></h1>
+<h1>Tableau "Echantillon" du medecin <?php echo $medecin[0][0]." ".$medecin[0][1] ?></h1>
 <table class="table table-bordered table-dark">
   <thead>
     <tr>
@@ -10,14 +10,13 @@
   <tbody>
     <?php
 
-    foreach($lesDates as $laDate) {
+    foreach($lesEchantillons as $leEchantillon) {
         echo "<tr>
-                <th scope=\"row\">".$laDate["numeroLot"]."</th>
-                <td>".$laDate["numero"]."</td>
+                <th scope=\"row\">".$leEchantillon["numeroLot"]."</th>
+                <td>".$leEchantillon["numero"]."</td>
               </tr> ";
     }       
     ?>
-    <tr>
   </tbody>
 </table>
 

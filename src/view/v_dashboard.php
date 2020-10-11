@@ -121,9 +121,9 @@
                 </a>
             </li>
             <li>
-                <a href="index.php?uc=visiteurs&action=ConsulterParDateSortie">
+                <a href="index.php?uc=visiteurs&action=ConsulterParMedecin">
                     <i class="fas fa-bookmark bigMoi"></i>
-                    <div class="sidebar-text"> Echantillon sortis par date de sortie</div>
+                    <div class="sidebar-text"> Echantillon par medecin</div>
                 </a>
             </li>
             <li>

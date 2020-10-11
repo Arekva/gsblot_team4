@@ -1,12 +1,13 @@
-<form class="form" method="Post"  action="index.php?uc=visiteurs&action=ConsulterParDateSortieTab">
+<form class="form" method="Post"  action="index.php?uc=visiteurs&action=ConsulterParMedecinTab">
 
     <div class="form-group">
-        <label for="inputState">Selectionnez une date de sortie</label>
-        <select id="inputState" class="form-control" name="date">
+        <label for="inputState">Selectionnez un Medecin</label>
+        <select id="inputState" class="form-control" name="matricule">
         <?php 
-              foreach($lesDates as $laDate)
+              foreach($lesMedecins as $leMedecin)
               {
-               echo "<option value=\"".$laDate["dateSortie"]."\">".$laDate["dateSortie"]."</option>";
+               echo "<option value=\"".$leMedecin["matricule"]."\">".$leMedecin["nomMedecin"]." ".$leMedecin["prenomMedecin"]."</option>";
+               
               }
             ?>
       </select>

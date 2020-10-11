@@ -1,35 +1,26 @@
-<form  method="Post"  action="index.php?uc=visiteurs&action=ValidationDon">
-<h1>Veuillez choisir les échantillons donner</h1>
-
+<form>
+<h1>Tableau "Echantillon donné" du <?php echo $date?></h1>
 <table class="table table-bordered table-dark">
   <thead>
     <tr>
       <th scope="col">N°Lot</th>
       <th scope="col">Echantillon</th>
-      <th scope="col">Donner ?</th>
+      <th scope="col">Medecin</th>
     </tr>
   </thead>
   <tbody>
     <?php
 
-    foreach($ADonner as $leDonner) {
+    foreach($lesDates as $laDate) {
         echo "<tr>
-                <th scope=\"row\">".$leDonner["gsb_numeroLot"]."</th>
-                <td>".$leDonner[0]."</td>
-                <td>
-                    <input type=\"checkbox\" value=\"".$leDonner[0]."\" name=\"".$leDonner[0]."_".$leDonner["gsb_numeroLot"]."\">
-                </td>
+                <th scope=\"row\">".$laDate["numeroLot"]."</th>
+                <td>".$laDate["numero"]."</td>
+                <td>".$laDate["nomMedecin"]." ".$laDate["prenomMedecin"]."</td>
               </tr> ";
     }       
     ?>
-    <tr>
   </tbody>
 </table>
-<input type="hidden" value=<?php echo "\"$medecin\"" ?> name="medecin">
-<input type="hidden" value=<?php echo "\"$medoc\"" ?> name="medicament"> 
-<input type="hidden" value=<?php echo "\"$date\"" ?> name="date"> 
 
-
-<button type="submit" class="btn btn-primary">Valider</button>
-<button type="button" class="btn btn-primary" onclick="window.history.back();">Annuler</button>
-</form>
+<button type="button" class="btn btn-primary" onclick="window.history.back();">Retour</button>
+<form>
