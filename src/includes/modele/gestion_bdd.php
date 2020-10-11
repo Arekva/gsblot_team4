@@ -337,7 +337,7 @@
 				$sql = "
 				SELECT gsb_echantillon.gsb_numero as numero, gsb_echantillon.gsb_numeroLot as numeroLot
 				FROM gsb_echantillon 
-				WHERE gsb_echantillon.dateDon = '$date'
+				WHERE gsb_echantillon.dateSortie = '$date'
 				ORDER BY numero,numeroLot
 				";
 				$exec=$bdd->prepare($sql);

@@ -1,6 +1,5 @@
-
-<h1>Veuillez choisir les échantillons donner</h1>
-
+<form>
+<h1>Tableau "Echantillon sortie" du <?php echo $date?></h1>
 <table class="table table-bordered table-dark">
   <thead>
     <tr>
@@ -13,11 +12,8 @@
 
     foreach($lesDates as $laDate) {
         echo "<tr>
-                <th scope=\"row\">".$leDonner["gsb_numeroLot"]."</th>
-                <td>".$leDonner[0]."</td>
-                <td>
-                    <input type=\"checkbox\" value=\"".$leDonner[0]."\" name=\"".$leDonner[0]."_".$leDonner["gsb_numeroLot"]."\">
-                </td>
+                <th scope=\"row\">".$laDate["numeroLot"]."</th>
+                <td>".$laDate["numero"]."</td>
               </tr> ";
     }       
     ?>
@@ -26,3 +22,4 @@
 </table>
 
 <button type="button" class="btn btn-primary" onclick="window.history.back();">Retour</button>
+<form>

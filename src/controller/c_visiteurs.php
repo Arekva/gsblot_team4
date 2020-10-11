@@ -113,7 +113,7 @@ switch ($action)
 
         $nom = $_SESSION['nom'];
         $prenom = $_SESSION['prenom']; 
-        $_SESSION['affichage'] = array("v_visit_show_samples_by_visit");
+        $_SESSION['affichage'] = array("v_visit_tabvisit");
         require "view/v_dashboard.php";
             
         
@@ -145,7 +145,7 @@ switch ($action)
 
         $nom = $_SESSION['nom'];
         $prenom = $_SESSION['prenom']; 
-        $_SESSION['affichage'] = array("v_visit_show_samples_by_exit");
+        $_SESSION['affichage'] = array("v_visit_tabexit");
         require "view/v_dashboard.php";
             
         

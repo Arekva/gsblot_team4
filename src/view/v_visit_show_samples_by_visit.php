@@ -1,4 +1,4 @@
-<form class="form" method="Post"  action="index.php?uc=visiteurs&action=donTableau">
+<form class="form" method="Post"  action="index.php?uc=visiteurs&action=ConsulterParDateVisiteTab">
 
     <div class="form-group">
         <label for="inputState">Selectionnez une date de visite</label>
