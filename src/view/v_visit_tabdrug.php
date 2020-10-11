@@ -22,5 +22,5 @@
   </tbody>
 </table>
 
-<button type="button" class="btn btn-primary" onclick="window.history.back();">Annuler</button>
+<button type="button" class="btn btn-primary" onclick="window.history.back();">Retour</button>
 </form>

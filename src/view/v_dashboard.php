@@ -104,25 +104,25 @@
             if ($_SESSION['droit'] == 3 ){
                 echo '
                 <a href="index.php?uc=visiteurs&action=ChoixMedicDateMedecin">
-                    <i class="fas fa-bookmark bigMoi"></i>
+                    <i class="fas fa-plus-square bigMoi"></i>
                     <div class="sidebar-text">Donner un échantillon</div>
                 </a>
             </li>
             <li>
                 <a href="index.php?uc=visiteurs&action=ConsulterParMedoc">
-                    <i class="fas fa-bookmark bigMoi"></i>
+                    <i class="fas fa-unlink bigMoi"></i>
                     <div class="sidebar-text">Echantillon par médicaments</div>
                 </a>
             </li>
             <li>
                 <a href="index.php?uc=visiteurs&action=ConsulterParDateVisite">
-                    <i class="fas fa-bookmark bigMoi"></i>
+                    <i class="fas fa-calendar-check bigMoi"></i>
                     <div class="sidebar-text"> Echantillon par date de visite</div>
                 </a>
             </li>
             <li>
                 <a href="index.php?uc=visiteurs&action=ConsulterParMedecin">
-                    <i class="fas fa-bookmark bigMoi"></i>
+                    <i class="fas fa-user-md bigMoi"></i>
                     <div class="sidebar-text"> Echantillon par medecin</div>
                 </a>
             </li>
