@@ -1,7 +1,4 @@
-<?php
-include "view/v_magasin_choix.php";
-?>
-
+<br><br>
 <h1>Consultation de tous les échantillons en magasin</h1>
 
 <?php
@@ -19,8 +16,7 @@ include "view/v_magasin_choix.php";
 
 	else
 	{
-		echo $totQt . ' échantillons sont disponibles dans le magasin :<br><br>';
-		echo '<table class="table table-striped">   
+		echo '<table class="table table-bordered table-dark">   
 			<tr>
 				<th>Médicament</th>
 				<th>Quantité</th>
@@ -28,9 +24,10 @@ include "view/v_magasin_choix.php";
 				
 		foreach($qtMedocs as $medoc) {
 
-			echo '<tr><th>' . $medoc['libelle'] . '</th><th>' . $medoc['nombre'] . '</th></tr>';
+			echo '<tr><td>' . $medoc['libelle'] . '</td><td>' . $medoc['nombre'] . '</td></td>';
 
 		}
+		echo '<tr><th> Total : </th><th>' . $totQt . '</th></th>';
 
 
 		echo '</table>';

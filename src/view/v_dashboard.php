@@ -72,19 +72,19 @@
                 </a>
             </li>
             <li>
-                <a href="index.php?uc=magasinier&action=consultationSortis">
+                <a href="index.php?uc=magasinier&action=consultationSortisMedocs">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Consulte échantillon sortis par medicament</div>
                 </a>
             </li>
             <li>
-                <a href="index.php?uc=magasinier&action=consultationSortis">
+                <a href="index.php?uc=magasinier&action=consultationSortisDates">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Consulte échantillon sortis par date de sortie</div>
                 </a>
             </li>
             <li>
-                <a href="index.php?uc=magasinier&action=consultationSortis">
+                <a href="index.php?uc=magasinier&action=consultationSortisVisiteur">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Consulte échantillon sortis par visiteurs</div>
                 </a>

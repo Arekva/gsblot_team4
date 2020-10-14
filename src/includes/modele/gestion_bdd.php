@@ -134,6 +134,49 @@
 		return $curseur;
 	}
 
+	function getEchantillonsSortisMedocs($idMedoc) {
+		require "connectBdd.php";
+
+		$sql = "SELECT gsb_echantillon.*, gsb_visitualisateur.* FROM gsb_echantillon INNER JOIN gsb_lot 
+		ON gsb_lot.gsb_numero = gsb_echantillon.gsb_numeroLot INNER JOIN gsb_visitualisateur 
+		ON gsb_visitualisateur.gsb_id = gsb_echantillon.gsb_idVisitualisateur 
+		WHERE gsb_lot.gsb_idMedicament = :id AND gsb_echantillon.dateSortie IS NOT NULL";
+
+		$exec = $bdd->prepare($sql);
+		$exec->bindParam('id', $idMedoc);
+		$exec->execute();
+		$curseur = $exec->fetchAll();
+		return $curseur;
+	}
+	function getEchantillonsSortisDate($date) {
+		require "connectBdd.php";
+
+		$sql = "SELECT gsb_echantillon.*, gsb_visitualisateur.* FROM gsb_echantillon INNER JOIN gsb_lot 
+		ON gsb_lot.gsb_numero = gsb_echantillon.gsb_numeroLot INNER JOIN gsb_visitualisateur 
+		ON gsb_visitualisateur.gsb_id = gsb_echantillon.gsb_idVisitualisateur 
+		WHERE gsb_echantillon.dateSortie = :dateSortie AND gsb_echantillon.dateSortie IS NOT NULL";
+
+		$exec = $bdd->prepare($sql);
+		$exec->bindParam('dateSortie', $date);
+		$exec->execute();
+		$curseur = $exec->fetchAll();
+		return $curseur;
+	}
+
+	function getEchantillonsSortisVisiteur($nom, $prenom) {
+		require "connectBdd.php";
+
+		$sql = 'SELECT gsb_echantillon.*, gsb_visitualisateur.* FROM gsb_echantillon INNER JOIN gsb_lot 
+		ON gsb_lot.gsb_numero = gsb_echantillon.gsb_numeroLot INNER JOIN gsb_visitualisateur 
+		ON gsb_visitualisateur.gsb_id = gsb_echantillon.gsb_idVisitualisateur
+		WHERE gsb_visitualisateur.gsb_nom = "'.$nom.'" AND gsb_visitualisateur.gsb_prenom = "'.$prenom.'" AND gsb_echantillon.dateSortie IS NOT NULL';
+
+		$exec = $bdd->prepare($sql);
+		$exec->execute();
+		$curseur = $exec->fetchAll();
+		return $curseur;
+	}
+
 	/**
 	 * Recupère tous les échantillions selon un médicament, date de sortie et visiteur
 	 * @param medicamentId : Identifiant du médicament
