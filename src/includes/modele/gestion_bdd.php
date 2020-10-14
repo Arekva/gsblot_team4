@@ -117,11 +117,7 @@
 
 		$sql = 
 		"SELECT gsb_id, gsb_autorisation, gsb_nom, gsb_prenom 
-<<<<<<< HEAD
 		FROM gsb_visitualisateur 
-=======
-		FROM gsb_visitualisateur
->>>>>>> master
 		WHERE gsb_login = :username AND gsb_mdp = :pass";
 
 		$exec=$bdd->prepare($sql);
