@@ -1,3 +1,4 @@
+<div style="overflow-y: scroll;max-height: 90vh;">
 <form  method="Post"  action="index.php?uc=magasinier&action=validationSortis">
 <h1>Veuillez choisir les échantillons donner</h1>
 
@@ -6,7 +7,7 @@
     <tr>
       <th scope="col">N°Lot</th>
       <th scope="col">Echantillon</th>
-      <th scope="col">Donner ?</th>
+      <th scope="col">Sortir ?</th>
     </tr>
   </thead>
   <tbody>
@@ -25,11 +26,11 @@
     <tr>
   </tbody>
 </table>
-<input type="hidden" value=<?php echo "\"$medecin\"" ?> name="medecin">
-<input type="hidden" value=<?php echo "\"$medoc\"" ?> name="medicament"> 
+<input type="hidden" value=<?php echo "\"$visiteur\"" ?> name="visiteur">
 <input type="hidden" value=<?php echo "\"$date\"" ?> name="date"> 
 
 
 <button type="submit" class="btn btn-primary">Valider</button>
 <button type="button" class="btn btn-primary" onclick="window.history.back();">Annuler</button>
 </form>
+</div>

@@ -73,6 +73,25 @@ switch($mode) {
         $_SESSION['affichage'] = array("v_magasin_renseignement_confirme");
         require "view/v_dashboard.php";
 
+    case "validationSortis":
+        $date = $_REQUEST['date'];
+        $visiteur = $_REQUEST['visiteur'];      
+        
+        $ADonner = $echantillons;
+        foreach($ADonner as $leDonner){
+            if (isset($_REQUEST[$leDonner[0]."_".$leDonner["gsb_numeroLot"]])){
+                setSortis($date,$visiteur,$leDonner["gsb_numeroLot"],$leDonner[0]);
+            }
+        }
+
+        $echantillons = getEchantillonsEnStock();
+        $ADonner = $echantillons;
+
+        $nom = $_SESSION['nom'];
+        $prenom = $_SESSION['prenom']; 
+        $_SESSION['affichage'] = array("v_magasin_renseignement");
+        require "view/v_dashboard.php";
+
     default:
         echo "<h1>Error</h1>";
     break;

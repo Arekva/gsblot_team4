@@ -1,3 +1,4 @@
+<div style="overflow-y: scroll;max-height: 90vh;">
 <form  method="Post"  action="index.php?uc=visiteurs&action=ValidationDon">
 <h1>Veuillez choisir les échantillons donner</h1>
 
@@ -33,3 +34,4 @@
 <button type="submit" class="btn btn-primary">Valider</button>
 <button type="button" class="btn btn-primary" onclick="window.history.back();">Annuler</button>
 </form>
+</div>

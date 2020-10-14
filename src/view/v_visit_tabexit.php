@@ -1,3 +1,4 @@
+<div style="overflow-y: scroll;max-height: 90vh;">
 <form>
 <h1>Tableau "Echantillon" du medecin <?php echo $medecin[0][0]." ".$medecin[0][1] ?></h1>
 <table class="table table-bordered table-dark">
@@ -22,3 +23,4 @@
 
 <button type="button" class="btn btn-primary" onclick="window.history.back();">Retour</button>
 <form>
+</div>

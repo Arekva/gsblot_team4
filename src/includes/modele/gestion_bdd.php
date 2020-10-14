@@ -94,6 +94,18 @@
 		return $exec->fetchAll();
 	}
 
+	function setSortis($date, $codeVisiteur, $idLot, $idEchantillion) {
+		require "connectBdd.php";
+		$sql = "UPDATE gsb_echantillon
+				SET dateSortie = \"".$date."\", gsb_idVisitualisateur = \"".$codeVisiteur."\"
+				WHERE gsb_numero = $idEchantillion
+				AND gsb_numeroLot = $idLot ";
+		$exec=$bdd->prepare($sql);
+		
+		$exec->execute();
+
+	}
+
 	/**
 	 * Récupère un utilisateur selon un identifiant.
 	 * @param username : nom d'utilisateur du compte

@@ -1,7 +1,8 @@
-<h1>Renseignement de nouvelles sorties</h1>
 
-<form class="form" method="Post" action="index.php?uc=magasinier&action=renseignementTableau">
 
+<form class="formGaetan" method="Post" action="index.php?uc=magasinier&action=renseignementTableau">
+<center>
+<h3>Renseignement de nouvelles sorties</h3>
 
     <div class="form-group">
         <label for="inputState">Selectionnez un visiteur</label>
@@ -20,5 +21,5 @@
         <input type="date" class="form-control" aria-describedby="date" placeholder="" name= "date" required >
     </div>
 
-  <button type="submit" class="btn btn-primary">Valider</button>
+  <button type="submit" class="btn btn-primary">Valider</button></center>
 </form>

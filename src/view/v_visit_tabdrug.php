@@ -1,3 +1,4 @@
+<div style="overflow-y: scroll;max-height: 90vh;">
 <form>
 <h1>Echantillon du medicament <?php echo""?></h1>
 
@@ -24,3 +25,4 @@
 
 <button type="button" class="btn btn-primary" onclick="window.history.back();">Retour</button>
 </form>
+</div>
