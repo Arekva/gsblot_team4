@@ -117,7 +117,7 @@
 
 		$sql = 
 		"SELECT gsb_id, gsb_autorisation, gsb_nom, gsb_prenom 
-		FROM GSB_VISITUALISATEUR 
+		FROM gsb_visitualisateur
 		WHERE gsb_login = :username AND gsb_mdp = :pass";
 
 		$exec=$bdd->prepare($sql);
@@ -224,7 +224,7 @@
 		require "connectBdd.php";
 
 		$sql = 
-		"select * FROM GSB_MEDICAMENT";
+		"select * FROM gsb_medicament";
 
 		$exec = $bdd->prepare($sql);
 		$exec->execute();
