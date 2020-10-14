@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 09 oct. 2020 à 12:18
--- Version du serveur :  8.0.18
--- Version de PHP :  7.3.12
+-- Généré le : Dim 11 oct. 2020 à 11:56
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `stadjutoogg4`
+-- Base de données : `stadjutoogg4`
 --
 
 -- --------------------------------------------------------
@@ -32,26 +31,26 @@ DROP TABLE IF EXISTS `gsb_echantillon`;
 CREATE TABLE IF NOT EXISTS `gsb_echantillon` (
   `gsb_numero` int(11) NOT NULL AUTO_INCREMENT,
   `gsb_numeroLot` int(11) NOT NULL,
-  `dateSortie` datetime DEFAULT NULL,
-  `dateDon` datetime DEFAULT NULL,
+  `dateSortie` date DEFAULT NULL,
+  `dateDon` date DEFAULT NULL,
   `gsb_idVisitualisateur` varchar(50) DEFAULT NULL,
   `gsb_matriculeMedecins` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_numero`,`gsb_numeroLot`),
   KEY `gsb_idVisitualisateur` (`gsb_idVisitualisateur`),
   KEY `gsb_matriculeMedecins` (`gsb_matriculeMedecins`),
   KEY `gsb_numeroLot` (`gsb_numeroLot`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `gsb_echantillon`
 --
 
 INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dateDon`, `gsb_idVisitualisateur`, `gsb_matriculeMedecins`) VALUES
-(1, 1, '2020-09-07 00:00:00', '2020-09-08 00:00:00', '3', 'T2eW0R1D'),
-(1, 15, NULL, NULL, NULL, NULL),
-(2, 15, NULL, NULL, NULL, NULL),
-(3, 15, NULL, NULL, NULL, NULL),
-(4, 15, NULL, NULL, NULL, NULL),
+(1, 1, '2020-09-07', '2020-09-08', '3', 'T2eW0R1D'),
+(1, 15, '2020-10-07', '2020-10-06', '3', 'T2eW0R1D'),
+(2, 15, '2020-10-06', NULL, '3', NULL),
+(3, 15, '2020-10-13', '2020-10-21', '3', 'AATTORNEY'),
+(4, 15, '2020-10-13', '2020-10-21', '3', 'AATTORNEY'),
 (5, 15, NULL, NULL, NULL, NULL),
 (6, 15, NULL, NULL, NULL, NULL),
 (7, 15, NULL, NULL, NULL, NULL),
@@ -400,7 +399,7 @@ CREATE TABLE IF NOT EXISTS `gsb_lot` (
   `gsb_idMedicament` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_numero`),
   KEY `gsb_idMedicament` (`gsb_idMedicament`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `gsb_lot`
@@ -445,7 +444,7 @@ CREATE TABLE IF NOT EXISTS `gsb_medecins` (
   `gsb_nom` varchar(50) DEFAULT NULL,
   `gsb_prenom` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_matricule`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `gsb_medecins`
@@ -468,7 +467,7 @@ CREATE TABLE IF NOT EXISTS `gsb_medicament` (
   `id` int(11) NOT NULL,
   `libelle` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `gsb_medicament`
@@ -496,7 +495,7 @@ CREATE TABLE IF NOT EXISTS `gsb_visitualisateur` (
   `gsb_nom` varchar(50) DEFAULT NULL,
   `gsb_prenom` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `gsb_visitualisateur`

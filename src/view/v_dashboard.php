@@ -60,31 +60,31 @@
             // magasin
             if ($_SESSION['droit'] == 2 ){
                 echo '
-            <a href="#">
+            <a href="index.php?uc=magasinier&action=renseignement">
                 <i class="fas fa-bookmark bigMoi"></i>
                 <div class="sidebar-text">Renseigne date et user </div>
             </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=magasinier&action=consultationMedocs">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text">Consulte échantillon stock</div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=magasinier&action=consultationSortis">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Consulte échantillon sortis par medicament</div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=magasinier&action=consultationSortis">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Consulte échantillon sortis par date de sortie</div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="index.php?uc=magasinier&action=consultationSortis">
                     <i class="fas fa-bookmark bigMoi"></i>
                     <div class="sidebar-text"> Consulte échantillon sortis par visiteurs</div>
                 </a>
