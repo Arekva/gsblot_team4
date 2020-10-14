@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : Dim 11 oct. 2020 à 11:56
--- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
+-- Généré le :  mer. 14 oct. 2020 à 17:55
+-- Version du serveur :  10.4.10-MariaDB
+-- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `stadjutoogg4`
+-- Base de données :  `stadjutoogg4`
 --
 
 -- --------------------------------------------------------
@@ -31,8 +32,8 @@ DROP TABLE IF EXISTS `gsb_echantillon`;
 CREATE TABLE IF NOT EXISTS `gsb_echantillon` (
   `gsb_numero` int(11) NOT NULL AUTO_INCREMENT,
   `gsb_numeroLot` int(11) NOT NULL,
-  `dateSortie` date DEFAULT NULL,
-  `dateDon` date DEFAULT NULL,
+  `dateSortie` datetime DEFAULT NULL,
+  `dateDon` datetime DEFAULT NULL,
   `gsb_idVisitualisateur` varchar(50) DEFAULT NULL,
   `gsb_matriculeMedecins` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_numero`,`gsb_numeroLot`),
@@ -46,19 +47,19 @@ CREATE TABLE IF NOT EXISTS `gsb_echantillon` (
 --
 
 INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dateDon`, `gsb_idVisitualisateur`, `gsb_matriculeMedecins`) VALUES
-(1, 1, '2020-09-07', '2020-09-08', '3', 'T2eW0R1D'),
-(1, 15, '2020-10-07', '2020-10-06', '3', 'T2eW0R1D'),
-(2, 15, '2020-10-06', NULL, '3', NULL),
-(3, 15, '2020-10-13', '2020-10-21', '3', 'AATTORNEY'),
-(4, 15, '2020-10-13', '2020-10-21', '3', 'AATTORNEY'),
-(5, 15, NULL, NULL, NULL, NULL),
-(6, 15, NULL, NULL, NULL, NULL),
-(7, 15, NULL, NULL, NULL, NULL),
-(8, 15, NULL, NULL, NULL, NULL),
-(9, 15, NULL, NULL, NULL, NULL),
-(10, 15, NULL, NULL, NULL, NULL),
-(1, 16, NULL, NULL, NULL, NULL),
-(2, 16, NULL, NULL, NULL, NULL),
+(1, 1, '2020-09-07 00:00:00', '2020-09-08 00:00:00', '3', 'T2eW0R1D'),
+(1, 15, '2020-10-07 00:00:00', '2020-10-06 00:00:00', '3', 'T2eW0R1D'),
+(2, 15, '2020-10-06 00:00:00', NULL, '3', NULL),
+(3, 15, '2020-10-13 00:00:00', NULL, '3', NULL),
+(4, 15, '2020-10-13 00:00:00', '2020-10-21 00:00:00', '3', 'AATTORNEY'),
+(5, 15, '2020-10-14 00:00:00', NULL, '3', NULL),
+(6, 15, '2020-10-14 00:00:00', NULL, '3', NULL),
+(7, 15, '2020-10-14 00:00:00', NULL, '3', NULL),
+(8, 15, '2020-10-14 00:00:00', NULL, '3', NULL),
+(9, 15, '2020-10-14 00:00:00', NULL, '3', NULL),
+(10, 15, '2020-10-14 00:00:00', NULL, '3', NULL),
+(1, 16, '2020-10-14 00:00:00', NULL, '3', NULL),
+(2, 16, '2020-10-14 00:00:00', NULL, '3', NULL),
 (1, 17, NULL, NULL, NULL, NULL),
 (2, 17, NULL, NULL, NULL, NULL),
 (3, 17, NULL, NULL, NULL, NULL),
@@ -69,19 +70,19 @@ INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dat
 (3, 18, NULL, NULL, NULL, NULL),
 (4, 18, NULL, NULL, NULL, NULL),
 (5, 18, NULL, NULL, NULL, NULL),
-(1, 19, NULL, NULL, NULL, NULL),
-(2, 19, NULL, NULL, NULL, NULL),
-(3, 19, NULL, NULL, NULL, NULL),
+(1, 19, '2020-10-14 00:00:00', NULL, '3', NULL),
+(2, 19, '2020-10-15 00:00:00', NULL, '5', NULL),
+(3, 19, '2020-10-14 00:00:00', NULL, '3', NULL),
 (4, 19, NULL, NULL, NULL, NULL),
 (5, 19, NULL, NULL, NULL, NULL),
 (6, 19, NULL, NULL, NULL, NULL),
 (7, 19, NULL, NULL, NULL, NULL),
-(8, 19, NULL, NULL, NULL, NULL),
+(8, 19, '2020-10-15 00:00:00', NULL, '5', NULL),
 (9, 19, NULL, NULL, NULL, NULL),
 (10, 19, NULL, NULL, NULL, NULL),
-(11, 19, NULL, NULL, NULL, NULL),
-(1, 20, NULL, NULL, NULL, NULL),
-(2, 20, NULL, NULL, NULL, NULL),
+(11, 19, '2020-10-15 00:00:00', NULL, '5', NULL),
+(1, 20, '2020-10-15 00:00:00', NULL, '5', NULL),
+(2, 20, '2020-10-15 00:00:00', NULL, '5', NULL),
 (3, 20, NULL, NULL, NULL, NULL),
 (4, 20, NULL, NULL, NULL, NULL),
 (5, 20, NULL, NULL, NULL, NULL),
@@ -101,9 +102,9 @@ INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dat
 (5, 21, NULL, NULL, NULL, NULL),
 (6, 21, NULL, NULL, NULL, NULL),
 (7, 21, NULL, NULL, NULL, NULL),
-(8, 21, NULL, NULL, NULL, NULL),
+(8, 21, '2020-10-15 00:00:00', NULL, '5', NULL),
 (9, 21, NULL, NULL, NULL, NULL),
-(10, 21, NULL, NULL, NULL, NULL),
+(10, 21, '2020-10-15 00:00:00', NULL, '5', NULL),
 (11, 21, NULL, NULL, NULL, NULL),
 (12, 21, NULL, NULL, NULL, NULL),
 (13, 21, NULL, NULL, NULL, NULL),
@@ -384,7 +385,19 @@ INSERT INTO `gsb_echantillon` (`gsb_numero`, `gsb_numeroLot`, `dateSortie`, `dat
 (9, 38, NULL, NULL, NULL, NULL),
 (10, 38, NULL, NULL, NULL, NULL),
 (11, 38, NULL, NULL, NULL, NULL),
-(12, 38, NULL, NULL, NULL, NULL);
+(12, 38, NULL, NULL, NULL, NULL),
+(1, 39, NULL, NULL, NULL, NULL),
+(2, 39, NULL, NULL, NULL, NULL),
+(3, 39, NULL, NULL, NULL, NULL),
+(4, 39, NULL, NULL, NULL, NULL),
+(5, 39, NULL, NULL, NULL, NULL),
+(6, 39, NULL, NULL, NULL, NULL),
+(7, 39, NULL, NULL, NULL, NULL),
+(8, 39, NULL, NULL, NULL, NULL),
+(9, 39, NULL, NULL, NULL, NULL),
+(10, 39, NULL, NULL, NULL, NULL),
+(11, 39, NULL, NULL, NULL, NULL),
+(12, 39, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -399,7 +412,7 @@ CREATE TABLE IF NOT EXISTS `gsb_lot` (
   `gsb_idMedicament` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`gsb_numero`),
   KEY `gsb_idMedicament` (`gsb_idMedicament`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `gsb_lot`
@@ -430,7 +443,8 @@ INSERT INTO `gsb_lot` (`gsb_numero`, `gsb_dateFabrication`, `gsb_idMedicament`) 
 (35, '2020-10-13', '5'),
 (36, '2020-10-15', '5'),
 (37, '2020-10-21', '5'),
-(38, '2020-10-24', '5');
+(38, '2020-10-24', '5'),
+(39, '2020-10-14', '1');
 
 -- --------------------------------------------------------
 
