@@ -1,6 +1,6 @@
 <div style="overflow-y: scroll;max-height: 90vh;">
 <form  method="Post"  action="index.php?uc=magasinier&action=validationSortis">
-<h1>Veuillez choisir les échantillons donner</h1>
+<h1>Veuillez choisir les échantillons sortir</h1>
 
 <table class="table table-bordered table-dark">
   <thead>
