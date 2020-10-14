@@ -13,8 +13,6 @@ switch ($action)
     case "authentification" : {
             
             $id = $_REQUEST['login'];
-            echo $id;
-            echo "<br>";
             $mdp = md5($_REQUEST['mdp']);
             $user = getUser($id,$mdp);
             echo $user[0][0];
