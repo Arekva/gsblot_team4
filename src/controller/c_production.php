@@ -7,22 +7,34 @@ else
 switch ($action)
 	{
 	case "consultLotMedicament" : {
+
+            //récupération des médicaments
             $lesMedocs = getMedicaments(); 
+
+            //données nécéssaires pour le dashboard
             $nom = $_SESSION['nom'];
             $prenom = $_SESSION['prenom']; 
+
+            //affichage
             $_SESSION['affichage'] = array("v_nouveauLot");     
             require "view/v_dashboard.php";
             break ;}  
 
     case "validationNewLot" : {
+        //données d'affichage
     	$nom = $_SESSION['nom'];
         $prenom = $_SESSION['prenom'];
         $lesMedocs = getMedicaments(); 
-    	require "view/v_dashboard.php"; 
+    	require "view/v_dashboard.php";
+
+        // Recuperations des données du formulaires 
     	$laDate = $_REQUEST['laDate'];
     	$leIDmedoc = $_REQUEST['medic'];
     	$leNbr = $_REQUEST['nbrEchantillon'];
+        
+        //ajout du nouveau lot
     	AjoutNewLot($laDate,$leIDmedoc,$leNbr);
+        //message de succés
     	echo "<script>alert(\"Le nouveau lot a été enregistré\")</script>";
 		break;
 	}

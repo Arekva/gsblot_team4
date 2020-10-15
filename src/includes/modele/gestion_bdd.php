@@ -40,16 +40,19 @@
 
 	function AjoutNewLot($doute,$medocID,$nbEchantillon){
 		require "connectBdd.php";
+		//insertion du nouveau lot
 		$sql = 'insert into gsb_lot (gsb_dateFabrication,gsb_idMedicament)
 		VALUES ("'.$doute.'",'.$medocID.')';
 		$exec=$bdd->prepare($sql) ;
         $exec->execute() ;
 
+        //récupération du numero du dernier lot
 		$sql = 'select max(gsb_numero) from gsb_lot';
 		$exec=$bdd->prepare($sql) ;
         $exec->execute() ;
         $curseur = $exec->fetch();
         
+        //ajout des échantillons
         for ($i=1; $i < $nbEchantillon+1; $i++) { 
         	$sql = 'insert into gsb_echantillon (gsb_numero, gsb_numeroLot)
 			VALUES ('.$i.','.$curseur[0].')';
