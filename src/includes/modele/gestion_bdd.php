@@ -48,11 +48,11 @@
 		$sql = 'select max(gsb_numero) from gsb_lot';
 		$exec=$bdd->prepare($sql) ;
         $exec->execute() ;
-        $curseur = $exec->fetchAll();
+        $curseur = $exec->fetch();
         
         for ($i=1; $i < $nbEchantillon+1; $i++) { 
         	$sql = 'insert into gsb_echantillon (gsb_numero, gsb_numeroLot)
-			VALUES ('.$i.','.$curseur[0][0].')';
+			VALUES ('.$i.','.$curseur[0].')';
 			$exec=$bdd->prepare($sql) ;
         	$exec->execute() ;
         }
